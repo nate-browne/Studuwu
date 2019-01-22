@@ -1,5 +1,7 @@
 # INSERT PROJECT NAME HERE
 
+(insert photo of application here)
+
 ## by Ivan, Nate, and Brandon
 
 ### Description
