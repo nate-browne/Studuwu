@@ -1,4 +1,4 @@
-# INSERT PROJECT NAME HERE
+# Studuwu
 
 (insert photo of application here)
 
