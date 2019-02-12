@@ -1,0 +1,121 @@
+
+.title{
+	font-size: 50px;
+	text-align: left;
+	font-family: Helvetica Neue;
+	margin-left: 5%;
+}
+
+.header {
+	background: #f2f2f2;
+	overflow: hidden;
+	font-family: helvetica Neue;
+	display: flex;
+	justify-content: space-between;
+}
+
+.header button{
+	margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-left: 20px;
+    margin-right: 20px;
+	float: left;
+	color: black;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 70px;
+	width: 115px;
+	border-radius: 50%;
+	display: inline-block;
+}
+
+.header h1{
+	float: left;
+	color: black;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 70px;
+	display: inline-block;
+}
+
+.back{
+	background: #f2f2f2;
+	border: none;
+}
+
+.help{
+	background: #ffffff;
+	border-color: black;
+}
+.settings {
+	margin-left: 10%;
+	margin-bottom: 5%;
+	font-size: 50px;
+	font-family: Helvetica Neue;
+}
+
+.done button{
+	margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+	color: black;
+	text-align: center;
+	padding: 14px 16px;
+	font-size: 70px;
+	border-color: black;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	border-radius: 25px;
+}
+
+input[type=text]{
+	margin-top: 3%;
+	font-size: 50px;
+	width: 75%;
+	border-color: black;
+	font-family: helvetica Neue;
+	outline: none;
+	border-radius: 25px;
+}
+
+
+input[type=text]:focus{
+	border: 5px solid black;
+	font-family: helvetica Neue;
+}
+
+input[type=number]{
+	margin-top: 3%;
+	font-size: 50px;
+	width: 15%;
+	border-color: black;
+	font-family: helvetica Neue;
+	outline: none;
+	border-radius: 25px;
+}
+
+input[type=number]:focus{
+	 border: 5px solid black;
+	 font-family: helvetica Neue;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+  opacity: 1;
+}
+
+.uwu{
+	text-align: center;
+	font-size: 60px;
+	font-family: helvetica neue;
+	padding-top: 50px;
+}
+
+body {
+	background: #60d4f759;
+	margin: 0;
+	padding: 0;
+}

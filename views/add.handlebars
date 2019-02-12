@@ -1,45 +1,76 @@
 <html>
 <head>
 	<title>Add a Book</title>
+	<!-- Link a CSS style sheet -->
+	<link rel="stylesheet" href="css/add.css">
 </head>
 <body>
-<a href="/"><p> Go Home</p></a>
 
-<!-- Title of Page-->
-<h1> STUDUWU </h1>
-<a href="/toduwu"><h2>?</h2></a>
+<!-- Header of the page-->
+<div class="header">
+	<!-- Useul unicode for later&#9776; &#8592; -->
+	<!-- Back Button -->
+	<button onclick="window.location.href='/'" class="back"> 
+		&#10094;
+	</button>
+	<!-- App name -->
+	<h1> STUDUwU </h1>
+
+	<!-- Help Button -->
+	<button onclick="window.location.href='/help'" class="help">  ?  
+	</button>
+
+</div>
+
 <!-- Subtitle-->
-<h2> <b><u>Add a Book</u></b> </h2>
+<div class="title">
+	<h2> <b><u>Add a Book</u></b> </h2>
+</div>
 
 <!-- Settings-->
 <form>
-	<b>Name of Book:</b> <br>
-	<input type="text" name="book">
-</form>
-<form>
-	<b>Pages Per Session:</b> <br>
-	<input type="number" name="pages" min="1">
+	<div class="settings">
+		<b>Name of Book: </b> <br>
+		<input type="text" name="book">
+	</div>	
 </form>
 
 <form>
-	<b>Reading Time:</b> <br>
-	<input type="number" name="time" min="1">
+	<div class="settings">
+		<b>Pages Per Session:</b> <br>
+		<input type="number" name="pages" min="1">
+	</div>
 </form>
 
 <form>
-	<b>Break Time:</b> <br>
-	<input type="number" name="break" min="10">
+	<div class="settings">
+		<b>Reading Time:</b> <br>
+		<input type="number" name="time" min="1">
+	</div>
 </form>
 
 <form>
-	<b>Reminder Method?</b> <br>
-	<input type="text" name="reminder">
+	<div class="settings">
+		<b>Break Time:</b> <br>
+		<input type="number" name="break" min="10">
+	</div>
 </form>
 
+<form>
+	<div class="settings">
+		<b>Reminder Method?</b> <br>
+		<input type="text" name="reminder">
+	</div>
+</form>
 
-<button> <b> <a href="/">DONE!</a></b></button>
-<footer>
-	<h4>UwU</h4>
-</footer>
+<div onclick="window.location.href='/'" class="done">
+	<button> Done! </button>
+</div>
+
+<div class="uwu">
+	<footer>
+		UwU
+	</footer>
+</div>
 </body>
 </html>

@@ -1,0 +1,132 @@
+
+.title{
+	font-size: 50px;
+	text-align: center;
+	font-family: Helvetica Neue;
+}
+
+.header {
+	background: #f2f2f2;
+	overflow: hidden;
+	font-family: helvetica Neue;
+	display: flex;
+	justify-content: space-between;
+}
+
+.header button{
+	margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-left: 20px;
+    margin-right: 20px;
+	float: left;
+	color: black;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 70px;
+	width: 115px;
+	border-radius: 50%;
+	display: inline-block;
+}
+
+.header h1{
+	float: left;
+	color: black;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 70px;
+	display: inline-block;
+}
+
+.photoDiv{
+	text-align: center;
+	padding-top: 10%;
+	padding-bottom: 10%;
+}
+
+.bookInfo {
+	font-family: helvetica neue;
+	text-align: center;
+}
+
+.bookInfo p {
+	font-size: 40px;
+}
+
+.bookInfo b{
+	font-size: 80px;
+}
+
+.start button{
+	margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+	color: black;
+	text-align: center;
+	padding: 14px 16px;
+	font-size: 70px;
+	border-color: black;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	border-radius: 25px;
+	background: #8DA5DD;
+	border: none; 
+}
+
+.back{
+	background: #f2f2f2;
+	border: none;
+}
+
+.help{
+	background: #f2f2f2;
+	border: none;
+}
+
+.uwu{
+	text-align: center;
+	font-size: 60px;
+	font-family: helvetica neue;
+	padding-top: 50px;
+}
+
+body {
+	background: #E2E9FA;
+	margin: 0;
+	padding: 0;
+}
+
+.progress { 
+	height: 1.5%;  /* Can be anything */
+	position: relative;
+	background: red;
+	-moz-border-radius: 25px;
+	-webkit-border-radius: 25px;
+	border-radius: 25px;
+	box-shadow: inset 0 -1px 1px rgba(255,255,255,0.3);
+	margin-right: 10%;
+	margin-left: 10%;
+}
+
+.progress > span {
+  display: block;
+  height: 100%;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background-color: rgb(43,194,83);
+  background-image: linear-gradient(
+    center bottom,
+    rgb(43,194,83) 37%,
+    rgb(84,240,84) 69%
+  );
+  box-shadow: 
+    inset 0 2px 9px  rgba(255,255,255,0.3),
+    inset 0 -2px 6px rgba(0,0,0,0.4);
+  position: relative;
+  overflow: hidden;
+}
