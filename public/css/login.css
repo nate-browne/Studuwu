@@ -1,0 +1,91 @@
+
+.title{
+	text-align: center;
+	font-family: Helvetica Neue;
+}
+
+.header {
+	margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    text-align: center;
+	font-family: Baloo Thambi;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.header h1{
+	float: left;
+	color: black;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 150px;
+	display: inline-block;
+	margin-top: 50%;
+	margin-bottom: 30%;
+}
+
+.login button {
+	margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+	color: black;
+	text-align: center;
+	padding: 14px 16px;
+	font-size: 50px;
+	border: none;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	border-radius: 25px;
+	font-family: Baloo Thambi;
+	background: none;
+}
+
+.login a {
+	margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+	color: black;
+	text-align: center;
+	padding: 14px 16px;
+	font-size: 50px;
+	border: none;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	border-radius: 25px;
+	font-family: Baloo Thambi;
+}
+
+.uwu{
+	text-align: center;
+	font-size: 150px;
+	font-family: Baloo Thambi;
+	margin-top: 100.5px;
+	margin-bottom: 200px;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.calm {
+	/* The image used */
+	background-image: url("../images/calm.jpg");
+
+	/* Full height */
+	height: 100%; 
+
+	/* Center and scale the image nicely */
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+}
