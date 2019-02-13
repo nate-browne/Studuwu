@@ -8,9 +8,11 @@ var http = require('http');
 var path = require('path');
 var handlebars = require('express3-handlebars')
 
-var index = require('./routes/index');
+var login = require('./routes/login');
+var home = require('./routes/home');
 var todo = require('./routes/todo');
 var add = require('./routes/add');
+var edit = require('./routes/edit');
 var help = require('./routes/help');
 var reading = require('./routes/reading');
 // Example route
@@ -38,9 +40,11 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-app.get('/', index.view);
+app.get('/', login.view);
+app.get('/home', home.view);
 app.get('/toduwu', todo.view);
 app.get('/add', add.view);
+app.get('/edit', edit.view);
 app.get('/help', help.view);
 app.get('/reading', reading.view);
 // Example route

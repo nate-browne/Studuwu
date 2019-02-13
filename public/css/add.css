@@ -107,6 +107,31 @@ input[type=number]::-webkit-inner-spin-button {
   opacity: 1;
 }
 
+input[type=submit]{
+	margin-top: 3%;
+	font-size: 50px;
+	width: 75%;
+	border-color: black;
+	font-family: helvetica Neue;
+	outline: none;
+	border-radius: 25px;
+}
+
+.settings option{
+	margin-top: 3%;
+	font-size: 50px;
+	width: 75%;
+	border-color: black;
+	font-family: helvetica Neue;
+	outline: none;
+	border-radius: 25px;
+}
+
+input[type=sumbit]:focus{
+	border: 5px solid black;
+	font-family: helvetica Neue;
+}
+
 .uwu{
 	text-align: center;
 	font-size: 60px;

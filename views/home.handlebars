@@ -1,0 +1,92 @@
+<html>
+<head>
+	<title>Studuwu</title>
+	<meta charset="UTF-8">
+	<!--
+	<meta name="viewport" content="width=device-width">
+	-->
+	<meta name="description" content="A nice study tool for cool stuff and things">
+	<meta name="keywords" content="Studuwu, uwu, study, tool, study tool, books, CSE 170, COGS 120, assignment">
+	<link rel="stylesheet" href="../css/fontawesome.css">
+	<link rel="stylesheet" href="../css/home.css">
+	<script type="text/javascript" src="../js/navigation.js"></script>
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="js/jquery-1.11.0.js"></script>
+	
+	<!-- Progress bar -->
+	
+	<!-- TODO: add in style sheets and javascript stuff for the backend -->
+</head>
+
+<body>
+
+	<div class="header">
+		<!-- Useul unicode for later  &#8592; -->
+		
+		<!-- Menu Button -->
+		<div id="mySidenav" class="sidenav">
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">   &times;
+			</a>
+			<hr>
+			<!-- Each Book-->
+			<a href="./add"> Add Book &#10133;  </a>
+			<hr>
+			{{#each books}}
+				<a href="{{link}}"> {{book}} </a>
+				<hr>
+			{{/each}}
+			<a href="./help">Help</a>
+			<hr>
+			<a href="/"> Log Out </a>
+			<hr>
+		</div>
+
+		<button class="menu" onclick="openNav()">
+			&#9776;
+		</button>
+		
+		<!-- App name -->
+		<h1> STUDUwU </h1>
+
+		<!-- Button for spacing -->
+		<button class="menu" onclick="closeNav()"></button>
+
+	</div>
+
+	<div class="photoDiv">
+		<button onclick="window.location.href='/edit'"> 			<img src="../images/book.jpg"> 
+			<br>
+			<p> Click on Picture to Edit</p>
+		</button>
+	</div>
+
+
+	<div class="bookInfo">
+		<b> Catch 22 </b>
+		<p> Author: Joseph Heller </p>
+		<p> Pages left in session: 100</p>
+		<p> Estimated Time Left: 83 minutes</p>
+		<p> 22% left</p>
+			
+		<!-- Progress Bar -->
+		<div class="progress">
+			<span style="width: 78%"></span>
+		</div>
+	</div>
+
+
+	<div class="start">
+		<button onclick="window.location.href='reading'"> 
+			Start Reading! 
+		</button>
+	</div>
+		
+	<div class="uwu">
+		<footer>
+			<a href="https://github.com/nate-browne/Studuwu" target="_blank"><i class="fa fa-github"></i></a>				<h4>UwU</h4>
+		</footer>
+	</div>
+
+</body>
+</html>
