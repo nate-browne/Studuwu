@@ -16,6 +16,8 @@
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="js/bootstrap.js"></script>
 	<script src="js/jquery-1.11.0.js"></script>
+	{{> facebook}}
+	<script src="js/facebook.js"></script>
 	
 	<!-- Progress bar -->
 	
@@ -41,7 +43,7 @@
 			{{/each}}
 			<a href="./help">Help</a>
 			<hr>
-			<a href="/"> Log Out </a>
+			<a onclick="logout();"> Log Out </a>
 			<hr>
 		</div>
 
