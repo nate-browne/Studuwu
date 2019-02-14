@@ -6,6 +6,13 @@
 	margin-top: 50%;
 }
 
+.title h2{
+	font-family: Baloo Thambi;
+	font-size: 100px;
+	text-align: center;
+	margin-top: 50%;
+}
+
 .header {
 	background: #f2f2f2;
 	overflow: hidden;
@@ -36,7 +43,7 @@
 	text-align: center;
 	padding: 14px 16px;
 	text-decoration: none;
-	font-size: 70px;
+	font-size: 80px;
 	display: inline-block;
 }
 
@@ -52,7 +59,7 @@
 
 .uwu{
 	text-align: center;
-	font-size: 60px;
+	font-size: 80px;
 	font-family: Baloo Thambi;
 	padding-top: 50px;
 }

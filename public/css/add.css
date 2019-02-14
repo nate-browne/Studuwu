@@ -9,7 +9,7 @@
 .header {
 	background: #f2f2f2;
 	overflow: hidden;
-	font-family: helvetica Neue;
+	font-family: Baloo Thambi;
 	display: flex;
 	justify-content: space-between;
 }
@@ -25,7 +25,7 @@
 	padding: 14px 16px;
 	text-decoration: none;
 	font-size: 70px;
-	width: 115px;
+	width: 155px;
 	border-radius: 50%;
 	display: inline-block;
 }
@@ -36,7 +36,7 @@
 	text-align: center;
 	padding: 14px 16px;
 	text-decoration: none;
-	font-size: 70px;
+	font-size: 80px;
 	display: inline-block;
 }
 
@@ -135,7 +135,7 @@ input[type=sumbit]:focus{
 .uwu{
 	text-align: center;
 	font-size: 60px;
-	font-family: helvetica neue;
+	font-family: Baloo Thambi;
 	padding-top: 50px;
 }
 
