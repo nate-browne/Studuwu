@@ -1,6 +1,6 @@
 
 .title{
-	font-size: 50px;
+	font-size: 60px;
 	text-align: center;
 	font-family: Helvetica Neue;
 }
@@ -8,7 +8,7 @@
 .header {
 	background: #f2f2f2;
 	overflow: hidden;
-	font-family: helvetica Neue;
+	font-family: Helvetica Neue;
 	display: flex;
 	justify-content: space-between;
 }
@@ -30,12 +30,13 @@
 }
 
 .header h1{
+	font-family: Baloo Thambi;
 	float: left;
 	color: black;
 	text-align: center;
 	padding: 14px 16px;
 	text-decoration: none;
-	font-size: 70px;
+	font-size: 80px;
 	display: inline-block;
 }
 
@@ -103,7 +104,7 @@
 .uwu{
 	text-align: center;
 	font-size: 60px;
-	font-family: helvetica neue;
+	font-family: Baloo Thambi;
 	padding-top: 15px;
 }
 
