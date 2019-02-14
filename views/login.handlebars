@@ -7,6 +7,8 @@
 	<link rel="stylesheet" href="css/login.css">
 	<link href='https://fonts.googleapis.com/css?family=Baloo Thambi' rel='stylesheet'>
 	<link rel="stylesheet" href="../css/fontawesome.css">
+	{{> facebook}}
+	<script src="/js/facebook.js"></script>
 </head>
 <body class="calm">
 
@@ -21,9 +23,10 @@
 <div class="login">
 	
 	<button>
-		<a onclick="window.location.href='/home'" class="btn btn-block btn-social btn-facebook">
+		<h3 class="btn btn-block btn-social btn-facebook">
 	    		<span class="fa fa-facebook"></span> Sign in with Facebook
-		</a>
+					<fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
+		</h3>
 	</button>
 
 	<button>
