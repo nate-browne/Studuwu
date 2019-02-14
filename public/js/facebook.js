@@ -1,12 +1,3 @@
-function checkLoginState() {
-  FB.getLoginStatus((response) => {
-    let res = statusChange(response);
-    if(res) {
-      window.top.location = "/home";
-    }
-  });
-}
-
 function statusChange(resp) {
   if(resp.status === "connected") {
     console.log("success");
@@ -14,7 +5,18 @@ function statusChange(resp) {
     console.log("User ID: " + id);
     return true;
   } else if(resp.status === "unknown" || resp.status === "not_authorized") {
-    FB.login();
     return false;
   }
 } 
+
+/**
+ * Login functionality added to the button
+ */
+function login() {
+  FB.login((response) => {
+    let res = statusChange(response);
+    if(res) {
+      window.top.location = "/home";
+    }
+  }, {scope: "public_profile,email"});
+}
