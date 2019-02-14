@@ -9,7 +9,7 @@
 .header {
 	background: #f2f2f2;
 	overflow: hidden;
-	font-family: helvetica Neue;
+	font-family: Baloo Thambi;
 	display: flex;
 	justify-content: space-between;
 }
@@ -53,7 +53,7 @@
 .uwu{
 	text-align: center;
 	font-size: 60px;
-	font-family: helvetica neue;
+	font-family: Baloo Thambi;
 	padding-top: 50px;
 }
 
