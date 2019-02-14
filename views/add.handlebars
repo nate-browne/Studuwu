@@ -32,49 +32,46 @@
 </div>
 
 <!-- Settings-->
-<form>
+<form onsubmit="submit()" action="">
+
 	<div class="settings">
+		
 		<b>Name of Book: </b> <br>
 		<input type="text" name="book">
-	</div>	
-</form>
+		<br>
 
-<form>
-	<div class="settings">
 		<b>Pages Per Session:</b> <br>
 		<input type="number" name="pages" min="1">
-	</div>
-</form>
+		<br>
 
-<form>
-	<div class="settings">
 		<b>Reading Time:</b> <br>
 		<input type="number" name="time" min="1">
-	</div>
-</form>
+		<br>
 
-<form>
-	<div class="settings">
 		<b>Break Time:</b> <br>
 		<input type="number" name="break" min="10">
-	</div>
-</form>
+		<br>
 
-<form>
-	<div class="settings">
 		<b>Reminder Method?</b> <br>
 		<input type="text" name="reminder">
-	</div>
-</form>
+		<br>
+		<br>
 
-<div onclick="window.location.href='/home'" class="done">
-	<button> Done! </button>
-</div>
+		<input type="submit" name="submit">
+		<br>
+	</div>
+
+</form>
 
 <div class="uwu">
 	<footer>
 		UwU
 	</footer>
 </div>
+<script>
+	function submit() {
+		
+	}
+</script>
 </body>
 </html>
