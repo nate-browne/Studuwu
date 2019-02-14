@@ -56,11 +56,11 @@
 
 .photoDiv p{
 	font-size: 30px;
-	font-family: helvetica neue;
+	font-family: 'Roboto', sans-serif;
 }
 
 .bookInfo {
-	font-family: helvetica neue;
+	font-family: 'Roboto', sans-serif;
 	text-align: center;
 }
 
