@@ -20,3 +20,19 @@ function login() {
     }
   }, {scope: "public_profile,email"});
 }
+
+/**
+ * Logout functionality
+ */
+function logout() {
+  if(FB.getAccessToken() !== null) {
+
+    FB.logout((response) => {
+      if(!response.session) {
+        window.top.location = "/";
+      }
+    });
+  } else {
+    window.top.location = "/";
+  }
+}
