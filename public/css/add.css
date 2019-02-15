@@ -9,7 +9,7 @@
 .header {
 	background: #f2f2f2;
 	overflow: hidden;
-	font-family: helvetica Neue;
+	font-family: Baloo Thambi;
 	display: flex;
 	justify-content: space-between;
 }
@@ -25,9 +25,10 @@
 	padding: 14px 16px;
 	text-decoration: none;
 	font-size: 70px;
-	width: 115px;
+	width: 155px;
 	border-radius: 50%;
 	display: inline-block;
+	font-family: 'Roboto', sans-serif;
 }
 
 .header h1{
@@ -36,7 +37,7 @@
 	text-align: center;
 	padding: 14px 16px;
 	text-decoration: none;
-	font-size: 70px;
+	font-size: 80px;
 	display: inline-block;
 }
 
@@ -53,7 +54,7 @@
 	margin-left: 10%;
 	margin-bottom: 5%;
 	font-size: 50px;
-	font-family: Helvetica Neue;
+	font-family: 'Roboto', sans-serif;
 }
 
 .done button{
@@ -70,6 +71,7 @@
 	flex-direction: column;
 	justify-content: center;
 	border-radius: 25px;
+	font-family: 'Roboto', sans-serif;
 }
 
 input[type=text]{
@@ -77,7 +79,7 @@ input[type=text]{
 	font-size: 50px;
 	width: 75%;
 	border-color: black;
-	font-family: helvetica Neue;
+	font-family: 'Roboto', sans-serif;
 	outline: none;
 	border-radius: 25px;
 }
@@ -85,7 +87,7 @@ input[type=text]{
 
 input[type=text]:focus{
 	border: 5px solid black;
-	font-family: helvetica Neue;
+	font-family: 'Roboto', sans-serif;
 }
 
 input[type=number]{
@@ -93,24 +95,51 @@ input[type=number]{
 	font-size: 50px;
 	width: 15%;
 	border-color: black;
-	font-family: helvetica Neue;
+	font-family: 'Roboto', sans-serif;
 	outline: none;
 	border-radius: 25px;
 }
 
 input[type=number]:focus{
 	 border: 5px solid black;
-	 font-family: helvetica Neue;
+	 font-family: 'Roboto', sans-serif;
 }
 
 input[type=number]::-webkit-inner-spin-button {
   opacity: 1;
 }
 
+input[type=submit]{
+	margin-top: 3%;
+	font-size: 50px;
+	width: 25%;
+	border-color: black;
+	font-family: 'Roboto', sans-serif;
+	outline: none;
+	border-radius: 25px;
+	text-align: center;
+	margin-left: 33%;
+}
+
+.settings option{
+	margin-top: 3%;
+	font-size: 50px;
+	width: 75%;
+	border-color: black;
+	font-family: 'Roboto', sans-serif;
+	outline: none;
+	border-radius: 25px;
+}
+
+input[type=sumbit]:focus{
+	border: 5px solid black;
+	font-family: 'Roboto', sans-serif;
+}
+
 .uwu{
 	text-align: center;
 	font-size: 60px;
-	font-family: helvetica neue;
+	font-family: Baloo Thambi;
 	padding-top: 50px;
 }
 

@@ -1,0 +1,102 @@
+<html>
+<head>
+	<title>Studuwu</title>
+	<meta charset="UTF-8">
+	<!--
+	<meta name="viewport" content="width=device-width">
+	-->
+	<meta name="description" content="A nice study tool for cool stuff and things">
+	<meta name="keywords" content="Studuwu, uwu, study, tool, study tool, books, CSE 170, COGS 120, assignment">
+	<link rel="stylesheet" href="/css/fontawesome.css">
+	<link rel="stylesheet" href="/css/home.css">
+	<link href='https://fonts.googleapis.com/css?family=Baloo Thambi' rel='stylesheet'>
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+	<script type="text/javascript" src="/js/navigation.js"></script>
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="/js/bootstrap.js"></script>
+	<script src="/js/jquery-1.11.0.js"></script>
+	{{> facebook}}
+	<script src="/js/facebook.js"></script>
+	
+	<!-- Progress bar -->
+	
+	<!-- TODO: add in style sheets and javascript stuff for the backend -->
+</head>
+
+<body>
+
+	<div class="header">
+		<!-- Useful unicode for later  &#8592; -->
+		
+		<!-- Menu Button -->
+		<div id="mySidenav" class="sidenav">
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">   &times;
+			</a>
+			<hr>
+			<!-- Each Book-->
+			<a href="/add/{{userID}}"> Add Book &#10133;  </a>
+			<hr>
+			{{#each books}}
+				<a href="home/{{userID}}"> {{name}} </a>
+				<hr>
+			{{/each}}
+			<a href="/help/{{userID}}">Help</a>
+			<hr>
+			<a onclick="logout();"> Log Out </a>
+			<hr>
+		</div>
+
+		<button class="menu" onclick="openNav()">
+			&#9776;
+		</button>
+		
+		<!-- App name -->
+		<h1> STUDUwU </h1>
+
+		<!-- Button for spacing -->
+		<button class="menu" onclick="closeNav()"></button>
+
+	</div>
+
+	<div class="photoDiv">
+		<button onclick="window.location.href='/edit/{{userID}}'"> 			<img src="/images/book.jpg"> 
+			<br>
+			<p> Click on Picture to Edit</p>
+		</button>
+	</div>
+
+
+	<div class="bookInfo">
+		<b> Catch 22 </b>
+		<p> Author: Joseph Heller </p>
+		<p> Pages left in session: 100</p>
+		<p> Estimated Time Left: 83 minutes</p>
+		<p> 22% left</p>
+			
+		<!-- Progress Bar -->
+		<div class="progress">
+			<span style="width: 78%"></span>
+		</div>
+	</div>
+
+
+	<div class="start">
+		<button onclick="clicked();"> 
+			Start Reading! 
+		</button>
+	</div>
+		
+	<div class="uwu">
+		<footer>
+			<h4>UwU</h4>
+		</footer>
+	</div>
+
+	<script>
+		function clicked() {
+			window.location.pathname = "/reading/" + {{userID}};
+		}
+	</script>
+</body>
+</html>

@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>Add a Book</title>
+	<title>Edit Book</title>
 	<!--<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	-->
 	<!-- Link a CSS style sheet -->
@@ -21,14 +21,14 @@
 	<h1> STUDUwU </h1>
 
 	<!-- Help Button -->
-	<button onclick="window.location.pathname='/help/{{userID}}'" class="help">  ?  
+	<button onclick="window.location.pathname='/help'" class="help">  ?  
 	</button>
 
 </div>
 
 <!-- Subtitle-->
 <div class="title">
-	<h2> <b><u>Add a Book</u></b> </h2>
+	<h2> <b><u>Edit Book</u></b> </h2>
 </div>
 
 <!-- Settings-->
@@ -37,27 +37,27 @@
 	<div class="settings">
 		
 		<b>Name of Book: </b> <br>
-		<input type="text" id="book">
+		<input type="text" name="book">
 		<br>
 
 		<b>Pages Per Session:</b> <br>
-		<input type="number" id="pages" min="1">
+		<input type="number" name="pages" min="1">
 		<br>
 
 		<b>Reading Time:</b> <br>
-		<input type="number" id="time" min="1">
+		<input type="number" name="time" min="1">
 		<br>
 
 		<b>Break Time:</b> <br>
-		<input type="number" id="break" min="10">
+		<input type="number" name="break" min="10">
 		<br>
 
 		<b>Reminder Method?</b> <br>
-		<input type="text" id="reminder">
+		<input type="text" name="reminder">
 		<br>
 		<br>
 
-		<input type="submit" name="submit" value="Add">
+		<input type="submit" name="submit" value="Done!">
 		<br>
 	</div>
 

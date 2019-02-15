@@ -1,0 +1,47 @@
+<html>
+<head>
+	<title>	Login </title>
+	<!--
+	<meta name="viewport" content="width=device-width">
+	-->	<!-- Link a CSS style sheet -->
+	<link rel="stylesheet" href="/css/login.css">
+	<link href='https://fonts.googleapis.com/css?family=Baloo Thambi' rel='stylesheet'>
+	<link rel="stylesheet" href="/css/fontawesome.css">
+	{{> facebook}}
+	<script src="/js/facebook.js"></script>
+</head>
+<body class="calm">
+
+<!-- Header of the page-->
+<div class="header">
+
+	<!-- App name -->
+	<h1> STUDUwU </h1>
+	<h3> Who knew reading could make you <br> UwU <br></h3>
+</div>
+
+<div class="login">
+	
+	<button onclick="login();">
+		<h3 class="btn btn-block btn-social btn-facebook">
+	    		<span class="fa fa-facebook"></span> Sign in with Facebook
+		</h3>
+	</button>
+
+	<button onclick="goTodo();">
+		<h3 class="btn btn-block btn-social btn-google">
+	    		<span class="fa fa-google"></span> Sign in with Google
+		</h3>
+	</button>
+	
+	<a href="https://github.com/nate-browne/Studuwu" target="_blank"><i class="fa fa-github"></i></a>	
+	
+</div>
+<script>
+	function goTodo() {
+		window.location.pathname = "/toduwu";
+	}
+</script>
+
+</body>
+</html>

@@ -4,8 +4,7 @@
  */
 
 exports.view = function(req, res){
-  console.log(req.params.userID);
-  res.render('reading', {
+  res.render('edit', {
     'userID': req.params.userID
   });
-}
+};

@@ -3,12 +3,20 @@
 	font-size: 50px;
 	text-align: center;
 	font-family: Helvetica Neue;
+	margin-top: 50%;
+}
+
+.title h2{
+	font-family: Baloo Thambi;
+	font-size: 100px;
+	text-align: center;
+	margin-top: 50%;
 }
 
 .header {
 	background: #f2f2f2;
 	overflow: hidden;
-	font-family: helvetica Neue;
+	font-family: Baloo Thambi;
 	display: flex;
 	justify-content: space-between;
 }
@@ -35,7 +43,7 @@
 	text-align: center;
 	padding: 14px 16px;
 	text-decoration: none;
-	font-size: 70px;
+	font-size: 80px;
 	display: inline-block;
 }
 
@@ -51,8 +59,8 @@
 
 .uwu{
 	text-align: center;
-	font-size: 60px;
-	font-family: helvetica neue;
+	font-size: 80px;
+	font-family: Baloo Thambi;
 	padding-top: 50px;
 }
 
@@ -63,7 +71,7 @@ body{
 
 .calm {
 	/* The image used */
-	background-image: url("../images/calm.jpg");
+	background-image: url("/images/calm.jpg");
 
 	/* Full height */
 	height: 100%; 
