@@ -7,17 +7,17 @@
 	-->
 	<meta name="description" content="A nice study tool for cool stuff and things">
 	<meta name="keywords" content="Studuwu, uwu, study, tool, study tool, books, CSE 170, COGS 120, assignment">
-	<link rel="stylesheet" href="../css/fontawesome.css">
-	<link rel="stylesheet" href="../css/home.css">
+	<link rel="stylesheet" href="/css/fontawesome.css">
+	<link rel="stylesheet" href="/css/home.css">
 	<link href='https://fonts.googleapis.com/css?family=Baloo Thambi' rel='stylesheet'>
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
-	<script type="text/javascript" src="../js/navigation.js"></script>
+	<script type="text/javascript" src="/js/navigation.js"></script>
 	<script src="https://code.jquery.com/jquery.js"></script>
-	<script src="js/bootstrap.js"></script>
-	<script src="js/jquery-1.11.0.js"></script>
+	<script src="/js/bootstrap.js"></script>
+	<script src="/js/jquery-1.11.0.js"></script>
 	{{> facebook}}
-	<script src="js/facebook.js"></script>
+	<script src="/js/facebook.js"></script>
 	
 	<!-- Progress bar -->
 	
@@ -27,7 +27,7 @@
 <body>
 
 	<div class="header">
-		<!-- Useul unicode for later  &#8592; -->
+		<!-- Useful unicode for later  &#8592; -->
 		
 		<!-- Menu Button -->
 		<div id="mySidenav" class="sidenav">
@@ -35,13 +35,13 @@
 			</a>
 			<hr>
 			<!-- Each Book-->
-			<a href="./add"> Add Book &#10133;  </a>
+			<a href="/add/{{userID}}"> Add Book &#10133;  </a>
 			<hr>
 			{{#each books}}
-				<a href="{{link}}"> {{book}} </a>
+				<a href="home/{{userID}}"> {{name}} </a>
 				<hr>
 			{{/each}}
-			<a href="./help">Help</a>
+			<a href="/help/{{userID}}">Help</a>
 			<hr>
 			<a onclick="logout();"> Log Out </a>
 			<hr>
@@ -60,7 +60,7 @@
 	</div>
 
 	<div class="photoDiv">
-		<button onclick="window.location.href='/edit'"> 			<img src="../images/book.jpg"> 
+		<button onclick="window.location.href='/edit/{{userID}}'"> 			<img src="/images/book.jpg"> 
 			<br>
 			<p> Click on Picture to Edit</p>
 		</button>
@@ -82,7 +82,7 @@
 
 
 	<div class="start">
-		<button onclick="window.location.href='reading'"> 
+		<button onclick="clicked();"> 
 			Start Reading! 
 		</button>
 	</div>
@@ -93,5 +93,10 @@
 		</footer>
 	</div>
 
+	<script>
+		function clicked() {
+			window.location.pathname = "/reading/" + {{userID}};
+		}
+	</script>
 </body>
 </html>

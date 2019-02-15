@@ -4,7 +4,7 @@
 	<!--<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	-->
 	<!-- Link a CSS style sheet -->
-	<link rel="stylesheet" href="css/add.css">
+	<link rel="stylesheet" href="/css/add.css">
 	<link href='https://fonts.googleapis.com/css?family=Baloo Thambi' rel='stylesheet'>
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
@@ -14,14 +14,14 @@
 <div class="header">
 	<!-- Useul unicode for later&#9776; &#8592; -->
 	<!-- Back Button -->
-	<button onclick="window.location.href='/home'" class="back"> 
+	<button onclick="window.location.pathname='/home/{{userID}}'" class="back"> 
 		&#10094;
 	</button>
 	<!-- App name -->
 	<h1> STUDUwU </h1>
 
 	<!-- Help Button -->
-	<button onclick="window.location.href='/help'" class="help">  ?  
+	<button onclick="window.location.pathname='/help/{{userID}}'" class="help">  ?  
 	</button>
 
 </div>
@@ -32,32 +32,32 @@
 </div>
 
 <!-- Settings-->
-<form onsubmit="submit()" action="">
+<form role="form" action="/add/{{userID}}" method="POST">
 
 	<div class="settings">
 		
 		<b>Name of Book: </b> <br>
-		<input type="text" name="book">
+		<input type="text" id="book">
 		<br>
 
 		<b>Pages Per Session:</b> <br>
-		<input type="number" name="pages" min="1">
+		<input type="number" id="pages" min="1">
 		<br>
 
 		<b>Reading Time:</b> <br>
-		<input type="number" name="time" min="1">
+		<input type="number" id="time" min="1">
 		<br>
 
 		<b>Break Time:</b> <br>
-		<input type="number" name="break" min="10">
+		<input type="number" id="break" min="10">
 		<br>
 
 		<b>Reminder Method?</b> <br>
-		<input type="text" name="reminder">
+		<input type="text" id="reminder">
 		<br>
 		<br>
 
-		<input type="submit" name="submit">
+		<input type="submit" name="submit" value="Add">
 		<br>
 	</div>
 
@@ -68,10 +68,5 @@
 		UwU
 	</footer>
 </div>
-<script>
-	function submit() {
-		
-	}
-</script>
 </body>
 </html>

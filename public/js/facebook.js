@@ -3,9 +3,9 @@ function statusChange(resp) {
     console.log("success");
     let id = resp.authResponse['userID'];
     console.log("User ID: " + id);
-    return true;
+    return id;
   } else if(resp.status === "unknown" || resp.status === "not_authorized") {
-    return false;
+    return "";
   }
 } 
 
@@ -15,8 +15,8 @@ function statusChange(resp) {
 function login() {
   FB.login((response) => {
     let res = statusChange(response);
-    if(res) {
-      window.top.location = "/home";
+    if(res !== "") {
+      window.location.pathname = "/home/" + res;
     }
   }, {scope: "public_profile,email"});
 }
@@ -29,10 +29,10 @@ function logout() {
 
     FB.logout((response) => {
       if(!response.session) {
-        window.top.location = "/";
+        window.location.pathname = "/";
       }
     });
   } else {
-    window.top.location = "/";
+    window.location.pathname = "/";
   }
 }

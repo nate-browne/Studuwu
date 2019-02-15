@@ -71,7 +71,7 @@ body{
 
 .calm {
 	/* The image used */
-	background-image: url("../images/calm.jpg");
+	background-image: url("/images/calm.jpg");
 
 	/* Full height */
 	height: 100%; 
