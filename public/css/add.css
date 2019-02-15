@@ -109,7 +109,7 @@ input[type=number]::-webkit-inner-spin-button {
   opacity: 1;
 }
 
-input[type=submit]{
+.submitbutton {
 	margin-top: 3%;
 	font-size: 50px;
 	width: 25%;
