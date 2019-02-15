@@ -1,6 +1,6 @@
 # Studuwu
 
-(insert photo of application here)
+![login page](https://i.imgur.com/rmKuM27.png)
 
 ## by Ivan, Nate, and Brandon
 
