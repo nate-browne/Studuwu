@@ -45,7 +45,7 @@ app.get('/', login.view);
 app.get('/home/:userID', home.view);
 app.get('/toduwu', todo.view);
 app.get('/add/:userID', add.view);
-app.post('/add/:userID', add.submit);
+app.get('/add/:userID/subs', add.submitForm);
 app.get('/edit/:userID', edit.view);
 app.get('/help/:userID', help.view);
 app.get('/reading/:userID', reading.view);
