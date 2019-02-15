@@ -14,11 +14,11 @@ exports.view = function(req, res){
   });
 }
 
-exports.submit = function(req, res) {
+exports.submitForm = function(req, res) {
 
   let userID = req.params.userID;
   let session = {};
-  let name = req.query.name;
+  let name = req.query.book;
   let page_num = req.query.pages;
   let time_per_page = req.query.time;
   let rest_time = req.query.break;
