@@ -42,12 +42,13 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', login.view);
-app.get('/home', home.view);
+app.get('/home/:userID', home.view);
 app.get('/toduwu', todo.view);
-app.get('/add', add.view);
-app.get('/edit', edit.view);
-app.get('/help', help.view);
-app.get('/reading', reading.view);
+app.get('/add/:userID', add.view);
+app.post('/add/:userID', add.submit);
+app.get('/edit/:userID', edit.view);
+app.get('/help/:userID', help.view);
+app.get('/reading/:userID', reading.view);
 app.get('/privacy', privacy.view);
 // Example route
 // app.get('/users', user.list);
