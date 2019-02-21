@@ -5,8 +5,13 @@
 	<meta name="viewport" content="width=device-width">
 	-->
 	<!-- Link a CSS style sheet -->
-	<link rel="stylesheet" href="/css/help.css">
+	<link rel="stylesheet" href="/css/reading.css">
 	<link href='https://fonts.googleapis.com/css?family=Baloo Thambi' rel='stylesheet'>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>	
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="/js/bootstrap.js"></script>
+	<script src="/js/sound.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
 </head>
 <body class="calm">
 
@@ -26,9 +31,18 @@
 	
 </div>
 
+<audio id="sound" src="../images/beep-07.mp3" type="audio/mp3"></audio>
+
+<script type="text/javascript">
+	this.playSound(40000);
+</script>
+
+<div class="loader"></div>
 <!-- Subtitle-->
 <div class="title">
-	<h2> <b> SHHH! I'm trying to read! </b> </h2>
+	<marquee> 
+		<h1> <b> SHHH! I'm trying to read! </b> </h1>
+	</marquee>
 </div>
 
 <div class="uwu">

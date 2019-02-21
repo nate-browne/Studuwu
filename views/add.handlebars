@@ -32,38 +32,42 @@
 </div>
 
 <!-- Settings-->
-<form role="form" action="/add/{{userID}}" method="POST">
+<form role="form" action="/add/{{userID}}/subs/" method="get">
 
 	<div class="settings">
 		
 		<b>Name of Book: </b> <br>
-		<input type="text" id="book">
+		<input type="text" name="book" required="true" placeholder=" Insert Title">
+		<br>
+
+		<b>Image of Book: </b> <br>
+		<input type="file" name="pic" accept="image/*" required="true">
 		<br>
 
 		<b>Pages Per Session:</b> <br>
-		<input type="number" id="pages" min="1">
+		<input type="number" name="pages" min="1" required="true" placeholder="Pages">
 		<br>
 
 		<b>Reading Time:</b> <br>
-		<input type="number" id="time" min="1">
+		<input type="number" name="time" min="1" required="true" placeholder="Minutes">
 		<br>
 
 		<b>Break Time:</b> <br>
-		<input type="number" id="break" min="10">
+		<input type="number" name="break" min="10" required="true" placeholder="Minutes">
 		<br>
 
 		<b>Reminder Method?</b> <br>
 		<input type="radio" name="reminder" id="reminder" value="Music">
-			Music <br>
+		Music<br>
 		<input type="radio" name="reminder" id="reminder" value="Voice">
-			Voice <br>
+		Voice<br>
 		<input type="radio" name="reminder" id="reminder" value="Beep">
-			Beep <br>
-		<input type="radio" name="reminder" id="reminder" value="boop">
-			Boop <br>
+		Beep<br>
+		<input type="radio" name="reminder" id="reminder" value="Boop">
+		Boop<br>
 		<br>
 
-		<input type="submit" name="submit" value="Add">
+		<input class="submitbutton" type="submit" value="Add!"></input>
 		<br>
 	</div>
 

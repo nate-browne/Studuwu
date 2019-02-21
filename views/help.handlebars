@@ -8,6 +8,9 @@
 	<link href='https://fonts.googleapis.com/css?family=Baloo Thambi' rel='stylesheet'>
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Baloo Thambi" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="/js/bootstrap.js"></script>
+	<script src="/js/video.js"></script>
 </head>
 <body>
 
@@ -30,7 +33,85 @@
 <!-- Subtitle-->
 <div class="title">
 	<h2> <b><u>HELP!</u></b> </h2>
+	<p> <i> Click on question to reveal answer </i> </p>
 </div>
+
+<div>
+	<h4> 
+		<div id="light">
+			<a class="boxclose" id="boxclose" onclick="lightbox_close();"></a>
+			<video id="video" width="700" controls>
+			  <source src="../images/editBook.mov" type="video/mp4">
+			</video>
+		</div>
+
+		<div class="info">
+			<a onclick="show(1)">
+				1) How do I edit a book?
+			</a>
+			<div class="hiddenInfo" id="hidden1" style="display: none;">
+				<p> - You are able to edit a book by clicking on the picture seen on the home page.
+				</p>
+				<button href="#" onclick="lightbox_open();">Video</button>
+			</div>
+		</div>
+		<div id="fade" onClick="lightbox_close();"></div>
+	</h4>
+
+	<h4>
+		<div class="info">
+			<a onclick="show(2)">
+			2) How can I see the time left?
+			</a>
+		</div>
+		<div class="hiddenInfo" id="hidden2" style="display: none;">
+			<p>
+				- You are able to see you remaining time for your session on the homescreen. However, once you start reading, you would not be able to see the actual time remaining. Instead, you would get auditory cues that would let you know how much time you have left or if you have a break coming up. The reason for this is because we want to minimize all possible distractions, which includes removing the timer. 
+			</p>
+		</div>
+	</h4>
+
+	<h4>
+		<div class="info">
+			<a onclick="show(3)">
+			3) How do I know my session is in progress?
+			</a>
+		</div>
+		<div class="hiddenInfo" id="hidden3" style="display: none;">
+			<p>
+				- Besides having regular auditory cues, the go to way to know that your session has started is if the circle is spinning.
+			</p>
+			<div class="loader"></div>
+		</div>
+	</h4>
+
+	<h4>
+		<div class="info">
+			<a onclick="show(4)">
+			4) [Insert Question]
+			</a>
+		</div>
+		<div class="hiddenInfo" id="hidden4" style="display: none;">
+			<p>
+				- [Insert Answer]
+			</p>
+		</div>
+	</h4>
+
+	<h4>
+		<div class="info">
+			<a onclick="show(5)">
+			5) Why Studuwu?
+			</a>
+		</div>
+		<div class="hiddenInfo" id="hidden5" style="display: none;">
+			<p>
+				The real question is ... Why not? UwU
+			</p>
+		</div>
+	</h4>
+</div>
+
 
 <div class="uwu">
 	<footer>

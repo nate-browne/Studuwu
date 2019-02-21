@@ -1,16 +1,26 @@
-
+body {
+    background: #E2E9FA;
+    margin: 0;
+    padding: 0;
+}
 .title{
-	font-size: 50px;
 	text-align: center;
 	font-family: Helvetica Neue;
-	margin-top: 50%;
 }
 
 .title h2{
 	font-family: Baloo Thambi;
 	font-size: 100px;
 	text-align: center;
-	margin-top: 50%;
+	margin-bottom: 0;
+	margin-top: 0;
+}
+
+.title p {
+	margin-top: 0;
+	font-family: Baloo Thambi;
+	font-size: 30px;
+	text-align: center;
 }
 
 .header {
@@ -69,16 +79,111 @@ body{
 	padding: 0;
 }
 
-.calm {
-	/* The image used */
-	background-image: url("/images/calm.jpg");
+.info a{
+	margin-left: 2%;
+	font-family: Baloo Thambi;
+	font-size: 50px;
+}
 
-	/* Full height */
-	height: 100%; 
+.info p{
+	font-family: Baloo Thambi;
+}
 
-	/* Center and scale the image nicely */
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
+.hiddenInfo p{
+	font-family: Baloo Thambi;
+	font-size: 20px;
+	margin-left: 5%;
+	display: hidden;
+	margin-top: 0;
+	margin-bottom: 0;
+}
 
+video{
+	margin-left: 82%;
+	object-fit: fill;
+	width: 100%;
+	height: auto;
+}
+
+#fade {
+  display: none;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 1001;
+  -moz-opacity: 0.8;
+  opacity: .80;
+  filter: alpha(opacity=80);
+}
+
+#light {
+  display: none;
+  position: absolute;
+  max-width: 600px;
+  max-height: 360px;
+  margin-left: -300px;
+  margin-top: -180px;
+  z-index: 1002;
+  overflow: visible;
+}
+
+#boxclose {
+  float: right;
+  cursor: pointer;
+  border: 1px solid #AEAEAE;
+  border-radius: 3px;
+  font-size: 31px;
+  font-weight: bold;
+  display: inline-block;
+  line-height: 0px;
+  padding: 11px 3px;
+  position: absolute;
+  right: 2px;
+  top: 2px;
+  z-index: 1002;
+  opacity: 0.9;
+}
+
+.hiddenInfo button{
+	color: black;
+	text-align: center;
+	text-decoration: none;
+	font-size: 30px;
+	width: 200px;
+	display: inline-block;
+	background: #f2f2f2;
+	border: none;
+	margin-left: 41%;
+	margin-right: 35%;
+	font-family: Baloo Thambi;
+}
+
+.loader {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0%;
+	margin-bottom: 0;
+	border: 16px solid #f3f3f3;
+	border-radius: 50%;
+	border-top: 16px solid white;
+	border-right: 16px solid blue;
+	border-bottom: 16px solid purple;
+	border-left: 16px solid pink;
+	width: 100px;
+	height: 100px;
+	-webkit-animation: spin 10s linear infinite;
+	animation: spin 10s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
