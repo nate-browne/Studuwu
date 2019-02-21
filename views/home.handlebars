@@ -18,6 +18,8 @@
 	<script src="/js/jquery-1.11.0.js"></script>
 	{{> facebook}}
 	<script src="/js/facebook.js"></script>
+	<script src="/js/sound.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
 	
 	<!-- Progress bar -->
 	
@@ -58,15 +60,15 @@
 		<button class="menu" onclick="closeNav()"></button>
 
 	</div>
-
+	
 	<div class="photoDiv">
-		<button onclick="window.location.href='/edit/{{userID}}'"> 			<img src="/images/book.jpg"> 
+		<button onclick="window.location.href='/edit/{{userID}}'"> 			
+			<img src="/images/book.jpg"> 
 			<br>
 			<p> Click on Picture to Edit</p>
 		</button>
 	</div>
-
-
+	
 	<div class="bookInfo">
 		<b> Catch 22 </b>
 		<p> Author: Joseph Heller </p>
@@ -94,9 +96,9 @@
 	</div>
 
 	<script>
-		function clicked() {
-			window.location.pathname = "/reading/" + {{userID}};
-		}
+	function clicked() {
+		window.location.pathname = "/reading/" + {{userID}};
+	}
 	</script>
 </body>
 </html>
