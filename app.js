@@ -16,6 +16,7 @@ var edit = require('./routes/edit');
 var help = require('./routes/help');
 var reading = require('./routes/reading');
 var privacy = require('./routes/privacy');
+var terms = require('./routes/terms');
 // Example route
 // var user = require('./routes/user');
 
@@ -50,6 +51,7 @@ app.get('/edit/:userID', edit.view);
 app.get('/help/:userID', help.view);
 app.get('/reading/:userID', reading.view);
 app.get('/privacy', privacy.view);
+app.get('/terms',terms.view);
 // Example route
 // app.get('/users', user.list);
 

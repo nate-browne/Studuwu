@@ -4,7 +4,7 @@ function statusChange(resp) {
     let id = resp.authResponse['userID'];
     console.log("User ID: " + id);
     return id;
-  } else if(resp.status === "unknown" || resp.status === "not_authorized") {
+  } else {
     return "";
   }
 } 
