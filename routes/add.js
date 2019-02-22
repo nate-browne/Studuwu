@@ -38,6 +38,7 @@ exports.submitForm = function(req, res) {
   fileIO.write_to_file(userID, session, (dat) => {
     res.render('home', {
       'userID': userID,
+      'bookID': dat[userID][dat[userID].length - 1]['book_count'],
       'books': dat[userID],
       'res': true
     });

@@ -27,7 +27,7 @@ app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.engine('handlebars', handlebars());
 app.set('view engine', 'handlebars');
-app.use(express.favicon());
+app.use(express.favicon("public/images/favicon.ico"));
 app.use(express.logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded());
@@ -49,7 +49,7 @@ app.get('/add/:userID', add.view);
 app.get('/add/:userID/subs', add.submitForm);
 app.get('/edit/:userID', edit.view);
 app.get('/help/:userID', help.view);
-app.get('/reading/:userID', reading.view);
+app.get('/reading/:userID/:bookID', reading.view);
 app.get('/privacy', privacy.view);
 app.get('/terms',terms.view);
 // Example route
