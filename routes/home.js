@@ -8,6 +8,7 @@ exports.view = function(req, res){
 	console.log(req.params.userID);
 	res.render('home', {
 		'userID': req.params.userID,
-		'books': data[req.params.userID]
+		'books': data[req.params.userID],
+		'res': false
 	});
 };
