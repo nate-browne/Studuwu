@@ -22,10 +22,21 @@
 	text-align: center;
 	padding: 14px 16px;
 	text-decoration: none;
-	font-size: 150px;
+	font-size: 170px;
 	display: inline-block;
-	margin-top: 50%;
-	margin-bottom: 30%;
+	margin-top: 30%;
+}
+
+.header h3{
+	float: left;
+	color: black;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 50px;
+	display: inline-block;
+	margin-top: 10%;
+	margin-bottom: 10%;
 }
 
 .login button {
@@ -33,17 +44,17 @@
     margin-block-end: 0.67em;
 	color: black;
 	text-align: center;
-	padding: 14px 16px;
-	font-size: 50px;
+	font-size: 75px;
 	border: none;
 	margin-left: auto;
 	margin-right: auto;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	border-radius: 25px;
 	font-family: Baloo Thambi;
 	background: none;
+	margin-top: 0;
+	margin-bottom: 0;
 }
 
 .login h3 {
@@ -61,6 +72,24 @@
 	justify-content: center;
 	border-radius: 25px;
 	font-family: Baloo Thambi;
+}
+
+.login a{
+	margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+	color: black;
+	text-align: center;
+	padding: 14px 16px;
+	font-size: 70px;
+	border: none;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	border-radius: 25px;
+	font-family: Baloo Thambi;
+	background: none;
 }
 
 .uwu{

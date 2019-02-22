@@ -5,9 +5,21 @@
 var data = require('../db/data.json');
 
 exports.view = function(req, res){
-	console.log(req.params.userID);
+	var bookdat;
+	var enabled = true;
+	let temp = data[req.params.userID];
+	if(temp === undefined) {
+		bookdat = "nonexist";
+		enabled = false;
+	}else{
+		bookdat = data[req.params.userID][0]['book_count'];
+	}
 	res.render('home', {
 		'userID': req.params.userID,
-		'books': data[req.params.userID]
+		'bookID': bookdat,
+		'books': data[req.params.userID],
+		'res': false,
+		'enabled': enabled,
+		'updated': false 
 	});
 };

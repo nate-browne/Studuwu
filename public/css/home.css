@@ -46,22 +46,10 @@
 	border-width: 3px;
 }
 
-.photoDiv{
-	max-width: 100%;
-	height: auto;
-	text-align: center;
-	padding-top: 10%;
-	padding-bottom: 5%;	
-}
-
-.photoDiv p{
-	font-size: 30px;
-	font-family: 'Roboto', sans-serif;
-}
-
 .bookInfo {
 	font-family: 'Roboto', sans-serif;
 	text-align: center;
+	margin-top: 35%;
 }
 
 .bookInfo p {
