@@ -1,6 +1,6 @@
 # Studuwu
 
-![login page](https://i.imgur.com/rmKuM27.png)
+![login page](https://i.imgur.com/20555HJ.png)
 
 ## by Ivan, Nate, and Brandon
 
