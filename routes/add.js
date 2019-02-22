@@ -43,7 +43,7 @@ exports.submitForm = function(req, res) {
       'bookID': dat[userID][dat[userID].length - 1]['book_count'],
       'books': dat[userID],
       'res': true,
-      'disabled': false,
+      'enabled': true,
       'updated': false 
     });
   });
