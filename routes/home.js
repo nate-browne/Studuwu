@@ -5,9 +5,12 @@
 var data = require('../db/data.json');
 
 exports.view = function(req, res){
-	var bookdat = data[req.params.userID][0]['book_count'];
-	if(bookdat === undefined) {
-		bookdat = "";
+	var bookdat;
+	let temp = data[req.params.userID];
+	if(temp === undefined) {
+		bookdat = "nonexist";
+	}else{
+		bookdat = data[req.params.userID][0]['book_count'];
 	}
 	res.render('home', {
 		'userID': req.params.userID,
