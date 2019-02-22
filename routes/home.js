@@ -6,9 +6,11 @@ var data = require('../db/data.json');
 
 exports.view = function(req, res){
 	var bookdat;
+	var enabled = true;
 	let temp = data[req.params.userID];
 	if(temp === undefined) {
 		bookdat = "nonexist";
+		enabled = false;
 	}else{
 		bookdat = data[req.params.userID][0]['book_count'];
 	}
@@ -16,6 +18,8 @@ exports.view = function(req, res){
 		'userID': req.params.userID,
 		'bookID': bookdat,
 		'books': data[req.params.userID],
-		'res': false
+		'res': false,
+		'enabled': enabled,
+		'updated': false 
 	});
 };

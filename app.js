@@ -17,6 +17,7 @@ var help = require('./routes/help');
 var reading = require('./routes/reading');
 var privacy = require('./routes/privacy');
 var terms = require('./routes/terms');
+var select = require('./routes/select');
 // Example route
 // var user = require('./routes/user');
 
@@ -50,6 +51,7 @@ app.get('/add/:userID/subs', add.submitForm);
 app.get('/edit/:userID', edit.view);
 app.get('/help/:userID', help.view);
 app.get('/reading/:userID/:bookID', reading.view);
+app.get('/select/:userID/:bookName', select.update);
 app.get('/privacy', privacy.view);
 app.get('/terms',terms.view);
 // Example route
