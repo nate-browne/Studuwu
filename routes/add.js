@@ -3,8 +3,6 @@
  * GET add page
  */
 
-const alert = require('alert-node');
-
 var fileIO = require("../public/js/fileIO");
 var counter = require('../db/counts.json');
 
