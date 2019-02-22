@@ -101,7 +101,11 @@
 
 	<script>
 	function clicked() {
-		window.location.pathname = "/reading/" + {{userID}};
+		if({{bookID}} === "") {
+			window.location.pathname = "/add" + {{userID}};
+		} else {
+			window.location.pathname = "/reading/" + {{userID}} + "/" + {{bookID}};
+		}
 	}
 	</script>
 </body>
