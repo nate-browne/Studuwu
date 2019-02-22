@@ -3,8 +3,10 @@
  * GET add page
  */
 
+const alert = require('alert-node');
+
 var fileIO = require("../public/js/fileIO");
-var data = require('../db/data.json');
+var counter = require('../db/counts.json');
 
 exports.view = function(req, res){
   let id = req.params.userID;
@@ -16,6 +18,7 @@ exports.view = function(req, res){
 
 exports.submitForm = function(req, res) {
 
+  let locCount = ++counter["count"];
   let userID = req.params.userID;
   let session = {};
   let name = req.query.book;
@@ -29,11 +32,16 @@ exports.submitForm = function(req, res) {
   session["time_per_page"] = time_per_page;
   session["rest_time"] = rest_time;
   session["reminder"] = reminder;
+  session["book_count"] = locCount;
 
-  fileIO.write_to_file(userID, session, () => {
+  counter["count"] = locCount;
+
+  fileIO.write_count_to_file(counter);
+  fileIO.write_to_file(userID, session, (dat) => {
     res.render('home', {
       'userID': userID,
-      'books': data[userID]
+      'books': dat[userID],
+      'res': true
     });
   });
 }
