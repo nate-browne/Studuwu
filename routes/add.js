@@ -25,12 +25,14 @@ exports.submitForm = function(req, res) {
   let rest_time = req.query.break;
   let reminder = req.query.reminder;
 
+  session["ownerID"] = userID;
   session["name"] = name;
   session["page_num"]= page_num;
   session["time_per_page"] = time_per_page;
   session["rest_time"] = rest_time;
   session["reminder"] = reminder;
   session["book_count"] = locCount;
+  session["active"] = 1;
 
   counter["count"] = locCount;
 
@@ -40,7 +42,9 @@ exports.submitForm = function(req, res) {
       'userID': userID,
       'bookID': dat[userID][dat[userID].length - 1]['book_count'],
       'books': dat[userID],
-      'res': true
+      'res': true,
+      'disabled': false,
+      'updated': false 
     });
   });
 }

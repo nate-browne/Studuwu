@@ -23,14 +23,17 @@
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
 	
 	<!-- Progress bar -->
-	
-	<!-- TODO: add in style sheets and javascript stuff for the backend -->
 </head>
-
 <body>
 
 	{{#if res}}
 		<script>alert("Success! Book added.");</script>
+	{{/if}}
+
+	{{#if updated}}
+		<script>alert("Success! New book chosen.");
+		window.location.pathname = "/home/" + {{userID}};
+		</script>
 	{{/if}}
 
 	<div class="header">
@@ -44,7 +47,7 @@
 			<a href="/add/{{userID}}"> Add Book &#10133;  </a>
 			<hr>
 			{{#each books}}
-				<a href="/home/2164106620314937" id="{{book_count}}"> {{name}} </a>
+				<a href="/select/{{ownerID}}/{{name}}" id="{{book_count}}"> {{name}} </a>
 				<hr>
 			{{/each}}
 			<a href="/help/{{userID}}">Help</a>
@@ -67,12 +70,6 @@
 			</a>
 		</button>
 	</div>
-
-	<script type="text/javascript">
-		function changeActive(){
-
-		}
-	</script>
 	{{#each books}}
 		{{#if active}}
 			<div class="bookInfo">
@@ -92,9 +89,15 @@
 
 
 	<div class="start">
-		<button onclick="clicked();"> 
-			Start Reading! 
-		</button>
+		{{#if enabled}}
+			<button onclick="clicked();"> 
+				Start Reading! 
+			</button>
+		{{else}}
+			<button onclick="clicked();" disabled> 
+				Start Reading! 
+			</button>
+		{{/if}}
 	</div>
 		
 	<div class="uwu">
@@ -104,14 +107,9 @@
 	</div>
 
 	<script>
-	function clicked() {
-		let tmp = {{bookID}};
-		if(tmp === "nonexist") {
-			window.location.pathname = "/add" + {{userID}};
-		} else {
+		function clicked() {
 			window.location.pathname = "/reading/" + {{userID}} + "/" + {{bookID}};
 		}
-	}
 	</script>
 </body>
 </html>
