@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="/css/add.css">
 	<link href='https://fonts.googleapis.com/css?family=Baloo Thambi' rel='stylesheet'>
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<script src="/js/sound.js"></script>
 </head>
 <body>
 
@@ -39,29 +40,48 @@
 		<b>Name of Book: </b> <br>
 		<input type="text" name="book" required="true" placeholder=" Insert Title">
 		<br>
+		<br>
 
-		<b>Pages Per Session:</b> <br>
+		<b>Page Goal for Session:</b> <br>
 		<input type="number" name="pages" min="1" required="true" placeholder="Pages">
 		<br>
-
-		<b>Reading Time:</b> <br>
-		<input type="number" name="time" min="1" required="true" placeholder="Minutes">
 		<br>
 
-		<b>Break Time:</b> <br>
-		<input type="number" name="break" min="10" required="true" placeholder="Minutes">
+		<b>Estimated Reading Time:</b> <br>
+		<input type="number" name="time" min="1" required="true" placeholder="Minutes">
+		<br>
+		<br>
+
+		<b> Breaks per Session:</b><br>
+		<input type="number" min="1" required="true" placeholder="Breaks">
+		<br>
+		<br>
+
+		<b>Time for each Break:</b> <br>
+		<input type="number" name="break" min="1" required="true" placeholder="Minutes">
+		<br>
 		<br>
 
 		<b>Reminder Method?</b> <br>
-		<input type="radio" name="reminder" id="reminder" value="Music">
-		Music<br>
-		<input type="radio" name="reminder" id="reminder" value="Voice">
-		Voice<br>
-		<input type="radio" name="reminder" id="reminder" value="Beep">
+
+		<audio id="alarm" src="/images/alarm.mp3" type="audio/mp3"></audio>
+		<input type="radio" name="reminder" id="reminder" value="alarm" onclick="alarm.play()">
+		Alarm<br>
+
+
+		<audio id="ding" src="/images/ding.mp3" type="audio/mp3"></audio>
+		<input type="radio" name="reminder" id="reminder" value="ding" onclick="ding.play()">
+		Ding<br>
+
+		<audio id="beep" src="/images/beep-07.mp3" type="audio/mp3"></audio>
+		<input type="radio" name="reminder" id="reminder" value="beep" onclick="beep.play()">
 		Beep<br>
-		<input type="radio" name="reminder" id="reminder" value="Boop">
+
+
+		<audio id="boop" src="/images/boop.mp3" type="audio/mp3" ></audio>
+		<input type="radio" name="reminder" id="reminder" value="boop" onclick="boop.play()"s>
 		Boop<br>
-		<br>
+
 
 		<input class="submitbutton" type="submit" value="Add!"></input>
 		<br>
@@ -71,7 +91,7 @@
 
 <div class="uwu">
 	<footer>
-		UwU
+		<a href="/home/{{userID}}" style="text-decoration:none;color:black ">UwU</a>
 	</footer>
 </div>
 </body>
