@@ -19,11 +19,11 @@
 	{{> facebook}}
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.min.js"></script>
 	<script src="/js/facebook.js"></script>
-	<script src="/js/sound.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
 	
 	<!-- Progress bar -->
 </head>
+
 <body>
 
 	{{#if res}}
@@ -70,19 +70,34 @@
 			</a>
 		</button>
 	</div>
+
 	{{#each books}}
 		{{#if active}}
 			<div class="bookInfo">
-				<b> {{name}} </b>
-				<p> Pages left in session: {{page_num}} minutes</p>
-				<p> Estimated Time Left: {{time_per_page}} minutes</p>
-				<p> Break Time: {{rest_time}} </p>
-				<p> Reminder Method: {{reminder}} <p>
+				<p> 
+					<b> {{name}} </b>
+				</p>
+
+				<p> 
+					<u>Pages left in session</u>:
+						<br>{{page_num}} pages
 					
-				<!-- Progress Bar -->
-				<div class="progress">
-					<span style="width: 78%"></span>
-				</div>
+				</p>
+
+				<p> 
+					<u>Estimated Time Left</u>:
+						<br>{{time_per_page}} minutes
+				</p>
+
+				<p> 
+					<u>Break Time</u>:
+						<br>{{rest_time}} minutes
+				</p>
+
+				<p> 
+					<u>Reminder Method</u>:
+						<br>{{reminder}} 
+				</p>
 			</div>
 		{{/if}}
 	{{/each}}
@@ -94,21 +109,27 @@
 				Start Reading! 
 			</button>
 		{{else}}
-			<button onclick="clicked();" disabled> 
-				Start Reading! 
-			</button>
+			<h1> 
+				Hello New User! <br>
+				<br>
+				Welcome to Studuwu, an app that would help you read and go UwU!<br>
+				<br>
+				To get started, click on the "Add Book" button below!<br>
+			</h1>
+			<a href="/add/{{userID}}"> Add Book &#10133;  </a>
 		{{/if}}
 	</div>
 		
 	<div class="uwu">
 		<footer>
-			<h4>UwU</h4>
+			<a href="/home/{{userID}}" style="text-decoration:none;color:black ">UwU</a>
 		</footer>
 	</div>
 
 	<script>
 		function clicked() {
 			window.location.pathname = "/reading/" + {{userID}} + "/" + {{bookID}};
+
 		}
 	</script>
 </body>

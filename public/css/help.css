@@ -99,7 +99,7 @@ body{
 }
 
 video{
-	margin-left: 82%;
+	margin-left: 100%;
 	object-fit: fill;
 	width: 100%;
 	height: auto;
@@ -161,21 +161,19 @@ video{
 	font-family: Baloo Thambi;
 }
 
-.loader {
+img{
+	margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 0%;
-	margin-bottom: 0;
 	border: 16px solid #f3f3f3;
-	border-radius: 50%;
-	border-top: 16px solid white;
+	border-top: 16px  solid #2ff3c69e;
 	border-right: 16px solid blue;
 	border-bottom: 16px solid purple;
 	border-left: 16px solid pink;
-	width: 100px;
-	height: 100px;
-	-webkit-animation: spin 10s linear infinite;
-	animation: spin 10s linear infinite;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 @-webkit-keyframes spin {

@@ -130,7 +130,7 @@ input[type=radio]{
 
 input[type=radio] {
     border: 0px;
-    width: 3%;
+    width: 5%;
     height: 35px;
 }
 
@@ -170,7 +170,7 @@ input[type=number]::placeholder{
 	text-align: center;
 	font-size: 60px;
 	font-family: Baloo Thambi;
-	padding-top: 50px;
+	padding-top: 15px;
 }
 
 body {

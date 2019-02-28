@@ -23,6 +23,7 @@ exports.submitForm = function(req, res) {
   let page_num = req.query.pages;
   let time_per_page = req.query.time;
   let rest_time = req.query.break;
+  //let num_rest = req.query.numBreaks;
   let reminder = req.query.reminder;
 
   session["ownerID"] = userID;
@@ -30,6 +31,7 @@ exports.submitForm = function(req, res) {
   session["page_num"]= page_num;
   session["time_per_page"] = time_per_page;
   session["rest_time"] = rest_time;
+  //session["num_breaks"] = num_rest;
   session["reminder"] = reminder;
   session["book_count"] = locCount;
   session["active"] = 1;

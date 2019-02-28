@@ -11,7 +11,7 @@
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="/js/bootstrap.js"></script>
 	<script src="/js/sound.js"></script>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 <body class="calm">
 
@@ -31,23 +31,56 @@
 	
 </div>
 
-<audio id="sound" src="../images/beep-07.mp3" type="audio/mp3"></audio>
+<!-- Get the audio and amount of time-->
 
+	{{#each books}}
+		{{#if active}}
+			<script type="text/javascript">
+				var readingTime = {{time_per_page}};
+				var breakTime = {{rest_time}};
+				//var numBreaks = {{num_breaks}};
+				let reminder_src = "/images/{{reminder}}.mp3";
+			</script>
+		{{/if}}
+	{{/each}}
+
+<!-- Subtitle-->
+<!-- <div class="loader"></div> -->
+<img src="/images/tenor.gif">
+<div class="title" id="title">
+	<!--<marquee> 
+		<h1> <b> SHHH! I'm trying to read! </b> </h1>
+	</marquee> -->
+
+	<h1> <b> SHHH! Reading in progress! </b> </h1>
+</div>
+
+<div class="status" id="status">
+	<h1><b></b></h1>
+</div>
+
+<div class="time" id="time">
+	<h1><b></b></h1>
+</div>
+
+<audio id="sound" src="" type="audio/mp3"></audio>
 <script type="text/javascript">
-	this.playSound(40000);
+	document.getElementById("sound").src = reminder_src;
+	playSound(readingTime, breakTime, 3);
 </script>
 
-<div class="loader"></div>
-<!-- Subtitle-->
-<div class="title">
-	<marquee> 
-		<h1> <b> SHHH! I'm trying to read! </b> </h1>
-	</marquee>
-</div>
+<button onclick="pause()" class="pause" id="pause">
+		Pause
+</button>
+
+<button onclick="play()" class="play" id="play" style="display: none">
+		Resume
+</button>
+
 
 <div class="uwu">
 	<footer>
-		UwU
+		<a href="/home/{{userID}}" style="text-decoration:none;color:black ">UwU</a>
 	</footer>
 </div>
 </body>
