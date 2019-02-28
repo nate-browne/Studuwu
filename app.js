@@ -39,8 +39,6 @@ app.use(express.session());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(enforce.HTTPS({trustProtoHeader: true}));
-
 // development only
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());
