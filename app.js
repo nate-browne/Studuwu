@@ -5,9 +5,10 @@
 
 var express = require('express');
 var http = require('http');
-var enforce = requre('express-sslify');
 var path = require('path');
 var handlebars = require('express3-handlebars')
+
+var enforce = requre('express-sslify');
 
 var login = require('./routes/login');
 var home = require('./routes/home');
@@ -29,6 +30,7 @@ app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.engine('handlebars', handlebars());
 app.set('view engine', 'handlebars');
+app.use(enforce.HTTPS({trustProtoHeader: true}));
 app.use(express.favicon("public/images/favicon.ico"));
 app.use(express.logger('dev'));
 app.use(express.json());
