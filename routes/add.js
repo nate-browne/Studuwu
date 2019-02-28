@@ -4,7 +4,7 @@
  */
 
 var fileIO = require("../public/js/fileIO");
-var counter = require('../public/db/counts.json');
+var counter = require('/app/public/db/counts.json');
 
 exports.view = function(req, res){
   let id = req.params.userID;
