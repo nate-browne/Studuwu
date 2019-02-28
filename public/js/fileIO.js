@@ -12,7 +12,7 @@ exports.write_to_file = function(id, session, callback = identity) {
   obj = JSON.parse(data);
   if(obj.hasOwnProperty(id)) {
     let lst = obj[id];
-    let ind = 0, saved = 0;
+    let ind = 0;
     for(ind = 0; ind < lst.length; ind++) {
       if(lst[ind]['name'] === session.name) {
         lst.splice(ind, 1);

@@ -16,7 +16,8 @@
     "express": "3.x",
     "express3-handlebars": "*",
     "mongodb": "*",
-    "mongoose": "*"
+    "mongoose": "*",
+    "xmlhttprequest": "^1.8.0"
   },
   "engines": {
     "node": "8.9.x"
