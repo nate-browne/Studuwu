@@ -1,6 +1,6 @@
 
 var fileIO = require("../public/js/fileIO");
-var data = require('../public/db/data.json');
+var data = require('/app/public/db/data.json');
 
 exports.update = function(req, res) {
   let userID = req.params.userID;
