@@ -5,6 +5,7 @@
 
 var express = require('express');
 var http = require('http');
+var enforce = requre('express-sslify');
 var path = require('path');
 var handlebars = require('express3-handlebars')
 
@@ -37,6 +38,8 @@ app.use(express.cookieParser('IxD secret key'));
 app.use(express.session());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(enforce.HTTPS({trustProtoHeader: true}));
 
 // development only
 if ('development' == app.get('env')) {
