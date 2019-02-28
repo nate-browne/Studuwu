@@ -14,6 +14,7 @@
   "dependencies": {
     "alert-node": "^1.2.3",
     "express": "3.x",
+    "express-sslify": "^1.2.0",
     "express3-handlebars": "*",
     "mongodb": "*",
     "mongoose": "*",
