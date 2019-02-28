@@ -12,12 +12,10 @@ var enforce = require('express-sslify');
 
 var fileIO = require('./public/js/fileIO');
 var login = require('./routes/login');
-var home = require('./routes/home');
 var todo = require('./routes/todo');
 var add = require('./routes/add');
 var edit = require('./routes/edit');
 var help = require('./routes/help');
-var reading = require('./routes/reading');
 var privacy = require('./routes/privacy');
 var terms = require('./routes/terms');
 // Example route
@@ -47,7 +45,26 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', login.view);
-app.get('/home/:userID', home.view);
+app.get('/home/:userID', (req, res) => {
+  let data = require('./public/db/data.json');
+	let bookdat;
+	let enabled = true;
+	let temp = data[req.params.userID];
+	if(temp === undefined) {
+		bookdat = "nonexist";
+		enabled = false;
+	}else{
+		bookdat = data[req.params.userID][0]['book_count'];
+	}
+	res.render('home', {
+		'userID': req.params.userID,
+		'bookID': bookdat,
+		'books': data[req.params.userID],
+		'res': false,
+		'enabled': enabled,
+		'updated': false 
+	});
+});
 app.get('/toduwu', todo.view);
 app.get('/add/:userID', add.view);
 app.post('/add/:userID/subs', (req, res) => {
@@ -89,7 +106,14 @@ app.post('/add/:userID/subs', (req, res) => {
 });
 app.get('/edit/:userID', edit.view);
 app.get('/help/:userID', help.view);
-app.get('/reading/:userID/:bookID', reading.view);
+app.get('/reading/:userID/:bookID', (req, res) => {
+  let data = require('./public/db/data.json');
+  res.render('reading', {
+    'userID': req.params.userID,
+    'bookID': req.params.bookID,
+    'books': data[req.params.userID]
+  });
+});
 app.get('/select/:userID/:bookName', (req, res) => {
 
   let data = require('./public/db/data.json');
