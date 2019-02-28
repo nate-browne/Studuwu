@@ -3,7 +3,7 @@
  * GET add page
  */
 
- var data = require('../db/data.json');
+var data = require('../public/db/data.json');
 
 exports.view = function(req, res){
 	var bookdat;
