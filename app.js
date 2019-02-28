@@ -10,6 +10,7 @@ var handlebars = require('express3-handlebars')
 
 var enforce = require('express-sslify');
 
+var fileIO = require('./public/js/fileIO');
 var login = require('./routes/login');
 var home = require('./routes/home');
 var todo = require('./routes/todo');
@@ -19,7 +20,6 @@ var help = require('./routes/help');
 var reading = require('./routes/reading');
 var privacy = require('./routes/privacy');
 var terms = require('./routes/terms');
-var select = require('./routes/select');
 // Example route
 // var user = require('./routes/user');
 
@@ -50,11 +50,74 @@ app.get('/', login.view);
 app.get('/home/:userID', home.view);
 app.get('/toduwu', todo.view);
 app.get('/add/:userID', add.view);
-app.post('/add/:userID/subs', add.submitForm);
+app.post('/add/:userID/subs', (req, res) => {
+
+  let counter = require('./public/db/counts.json');
+  let locCount = ++counter["count"];
+  let userID = req.params.userID;
+  let session = {};
+  let name = req.body.book;
+  let page_num = req.body.pages;
+  let time_per_page = req.body.time;
+  let rest_time = req.body.break;
+  //let num_rest = req.body.numBreaks;
+  let reminder = req.body.reminder;
+
+  session["ownerID"] = userID;
+  session["name"] = name;
+  session["page_num"]= page_num;
+  session["time_per_page"] = time_per_page;
+  session["rest_time"] = rest_time;
+  //session["num_breaks"] = num_rest;
+  session["reminder"] = reminder;
+  session["book_count"] = locCount;
+  session["active"] = 1;
+
+  counter["count"] = locCount;
+
+  fileIO.write_count_to_file(counter);
+  fileIO.write_to_file(userID, session, (dat) => {
+    res.render('home', {
+      'userID': userID,
+      'bookID': dat[userID][dat[userID].length - 1]['book_count'],
+      'books': dat[userID],
+      'res': true,
+      'enabled': true,
+      'updated': false 
+    });
+  });
+});
 app.get('/edit/:userID', edit.view);
 app.get('/help/:userID', help.view);
 app.get('/reading/:userID/:bookID', reading.view);
-app.get('/select/:userID/:bookName', select.update);
+app.get('/select/:userID/:bookName', (req, res) => {
+
+  let data = require('./public/db/data.json');
+
+  let userID = req.params.userID;
+  let bookName = req.params.bookName;
+  let i = 0, saved = 0;
+
+  let curr = data[userID];
+
+  for(i = 0; i < curr.length; ++i) {
+    if(curr[i]['name'] === bookName) {
+      curr[i]['active'] = 1;
+      saved = i;
+    } 
+  }
+
+  fileIO.write_to_file(userID, curr[saved], (dat) => {
+    res.render('home', {
+      'userID': userID,
+      'bookID': dat[userID][dat[userID].length - 1]['book_count'],
+      'books': dat[userID],
+      'res': false,
+      'enabled': true,
+      'updated': true
+    });
+  });
+});
 app.get('/privacy', privacy.view);
 app.get('/terms',terms.view);
 // Example route
