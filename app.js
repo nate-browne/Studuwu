@@ -8,7 +8,7 @@ var http = require('http');
 var path = require('path');
 var handlebars = require('express3-handlebars')
 
-var enforce = requre('express-sslify');
+var enforce = require('express-sslify');
 
 var login = require('./routes/login');
 var home = require('./routes/home');
