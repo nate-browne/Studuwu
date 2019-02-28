@@ -10,7 +10,7 @@ var handlebars = require('express3-handlebars')
 
 var enforce = require('express-sslify');
 
-var fileIO = require('./public/js/fileIO');
+var fileIO = require('./fileIO');
 var login = require('./routes/login');
 var todo = require('./routes/todo');
 var add = require('./routes/add');
@@ -46,7 +46,7 @@ if ('development' == app.get('env')) {
 
 app.get('/', login.view);
 app.get('/home/:userID', (req, res) => {
-  let data = require('./public/db/data.json');
+  let data = require('./db/data.json');
 	let bookdat;
 	let enabled = true;
 	let temp = data[req.params.userID];
@@ -69,7 +69,7 @@ app.get('/toduwu', todo.view);
 app.get('/add/:userID', add.view);
 app.post('/add/:userID/subs', (req, res) => {
 
-  let counter = require('./public/db/counts.json');
+  let counter = require('./db/counts.json');
   let locCount = ++counter["count"];
   let userID = req.params.userID;
   let session = {};
@@ -107,7 +107,7 @@ app.post('/add/:userID/subs', (req, res) => {
 app.get('/edit/:userID', edit.view);
 app.get('/help/:userID', help.view);
 app.get('/reading/:userID/:bookID', (req, res) => {
-  let data = require('./public/db/data.json');
+  let data = require('./db/data.json');
   res.render('reading', {
     'userID': req.params.userID,
     'bookID': req.params.bookID,
@@ -116,7 +116,7 @@ app.get('/reading/:userID/:bookID', (req, res) => {
 });
 app.get('/select/:userID/:bookName', (req, res) => {
 
-  let data = require('./public/db/data.json');
+  let data = require('./db/data.json');
 
   let userID = req.params.userID;
   let bookName = req.params.bookName;
@@ -144,8 +144,6 @@ app.get('/select/:userID/:bookName', (req, res) => {
 });
 app.get('/privacy', privacy.view);
 app.get('/terms',terms.view);
-// Example route
-// app.get('/users', user.list);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
