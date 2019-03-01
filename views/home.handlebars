@@ -31,7 +31,7 @@
 
 	{{#if updated}}
 		<script>alert("Success! New book chosen.");
-		window.location.pathname = "/home/" + {{userID}};
+		window.location.pathname = "/home/" + "{{userID}}";
 		</script>
 	{{/if}}
 
@@ -104,7 +104,7 @@
 
 	<div class="start">
 		{{#if enabled}}
-			<button onclick="clicked();"> 
+			<button onclick="clicked('/reading/{{userID}}/{{bookID}}');"> 
 				Start Reading! 
 			</button>
 		{{else}}
@@ -126,8 +126,7 @@
 	</div>
 
 	<script>
-		function clicked() {
-			let path = "/reading/" + {{userID}} + "/" + {{bookID}};
+		function clicked(path) {
 			window.location.pathname = path;
 
 		}
