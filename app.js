@@ -49,6 +49,7 @@ if ('development' == app.get('env')) {
  */
 app.get('/', login.render); // login screen
 app.get('/home/:userID', home.render); // home page
+app.get('/homeB/:userID', home.renderAlt);
 app.get('/toduwu', todo.render); // todo screen
 app.get('/add/:userID', add.render); // add page
 app.post('/add/:userID/send', add.send); // post request for adding a book

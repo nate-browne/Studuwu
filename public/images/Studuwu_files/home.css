@@ -1,3 +1,4 @@
+
 .title{
 	font-size: 60px;
 	text-align: center;
@@ -226,7 +227,7 @@ body {
   font-family: 'Roboto', sans-serif;
   margin-right: auto;
   margin-left: auto;
-  background: #e2e9fb;
+  margin-top: 10%;
 }
 
 .grid-item p{
@@ -238,5 +239,6 @@ body {
   font-family: 'Roboto', sans-serif;
   margin-right: auto;
   margin-left: auto;
+  margin-top: 10%;
   border: none;
 }

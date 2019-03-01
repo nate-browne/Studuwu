@@ -20,4 +20,6 @@ exports.render = function(req, res) {
     'bookID': req.params.bookID,
     'books': data[req.params.userID]
   });
+
+  var viewAlt = false;
 }

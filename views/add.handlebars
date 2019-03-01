@@ -11,9 +11,12 @@
 </head>
 <body>
 
+{{#if viewAlt}}
+	<script type="text/javascript">alert(1)</script>
+{{else}}
 <!-- Header of the page-->
 <div class="header">
-	<!-- Useul unicode for later&#9776; &#8592; -->
+	<!-- Useful unicode for later&#9776; &#8592; -->
 	<!-- Back Button -->
 	<button onclick="window.location.pathname='/home/{{userID}}'" class="back"> 
 		&#10094;
@@ -94,5 +97,6 @@
 		<a href="/home/{{userID}}" style="text-decoration:none;color:black ">UwU</a>
 	</footer>
 </div>
+{{/if}}
 </body>
 </html>
