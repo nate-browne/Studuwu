@@ -14,7 +14,6 @@
 
 	<script type="text/javascript" src="/js/navigation.js"></script>
 	<script src="https://code.jquery.com/jquery.js"></script>
-	<script src="/js/bootstrap.js"></script>
 	<script src="/js/jquery-1.11.0.js"></script>
 	{{> facebook}}
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.min.js"></script>
@@ -32,7 +31,7 @@
 
 	{{#if updated}}
 		<script>alert("Success! New book chosen.");
-		window.location.pathname = "/home/" + {{userID}};
+		window.location.pathname = "/home/" + "{{userID}}";
 		</script>
 	{{/if}}
 
@@ -105,7 +104,7 @@
 
 	<div class="start">
 		{{#if enabled}}
-			<button onclick="clicked();"> 
+			<button onclick="clicked('/reading/{{userID}}/{{bookID}}');"> 
 				Start Reading! 
 			</button>
 		{{else}}
@@ -127,8 +126,8 @@
 	</div>
 
 	<script>
-		function clicked() {
-			window.location.pathname = "/reading/" + {{userID}} + "/" + {{bookID}};
+		function clicked(path) {
+			window.location.pathname = path;
 
 		}
 	</script>
