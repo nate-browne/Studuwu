@@ -127,7 +127,8 @@
 
 	<script>
 		function clicked() {
-			window.location.pathname = "/reading/" + {{userID}} + "/" + {{bookID}};
+			let path = "/reading/" + {{userID}} + "/" + {{bookID}};
+			window.location.pathname = path;
 
 		}
 	</script>
