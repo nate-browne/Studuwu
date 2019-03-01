@@ -14,6 +14,8 @@
 
 	<script type="text/javascript" src="/js/navigation.js"></script>
 	<script src="https://code.jquery.com/jquery.js"></script>
+	
+	<script src="/js/bootstrap.js"></script>
 	<script src="/js/jquery-1.11.0.js"></script>
 	{{> facebook}}
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.min.js"></script>
@@ -27,13 +29,12 @@
 
 	{{#if viewAlt}}
 		{{#if res}}
-			<script>alert("Success! Book added.");</script>
+		<script>alert("Success! Book added.");</script>
 		{{/if}}
-	{{/if}}
 
 	{{#if updated}}
 		<script>alert("Success! New book chosen.");
-		window.location.pathname = "/home/" + "{{userID}}";
+		window.location.pathname = "/home/" + {{userID}};
 		</script>
 	{{/if}}
 
@@ -47,10 +48,6 @@
 			<!-- Each Book-->
 			<a href="/add/{{userID}}"> Add Book &#10133;  </a>
 			<hr>
-			{{#each books}}
-				<a href="/select/{{ownerID}}/{{name}}" id="{{book_count}}"> {{name}} </a>
-				<hr>
-			{{/each}}
 			<a href="/help/{{userID}}">Help</a>
 			<hr>
 			<a onclick="logout();"> Log Out </a>
@@ -72,36 +69,130 @@
 		</button>
 	</div>
 
-	{{#each books}}
-		{{#if active}}
-			<div class="bookInfo">
-				<p> 
-					<b> {{name}} </b>
-				</p>
-
-				<p> 
-					<u>Pages left in session</u>:
-						<br>{{page_num}} pages
-					
-				</p>
-
-				<p> 
-					<u>Estimated Time Left</u>:
-						<br>{{time_per_page}} minutes
-				</p>
-
-				<p> 
-					<u>Break Time</u>:
-						<br>{{rest_time}} minutes
-				</p>
-
-				<p> 
-					<u>Reminder Method</u>:
-						<br>{{reminder}} 
+	<div class="grid-container">
+		{{#each books}}
+			<div class="grid-item">
+			<button onclick="clicked();"> 
+					{{name}} 
+			</button>
+			<br>
+				<p>
+				Pages left in session: {{page_num}} pages
+				<br>
+				<br>
+				Estimated Time Left: {{time_per_page}} minutes
+				<br>
+				<br>
+				Break Time: {{rest_time}} minutes
+				<br><br>
+				Reminder Method: {{reminder}} 
 				</p>
 			</div>
+
+		{{/each}}
+	</div>
+
+	<div class="start">
+		{{#if enabled}}
+		{{else}}
+			<h1> 
+				Hello New User! <br>
+				<br>
+				Welcome to Studuwu, an app that would help you read and go UwU!<br>
+				<br>
+				To get started, click on the "Add Book" button below!<br>
+			</h1>
+			<a href="/add/{{userID}}"> Add Book &#10133;  </a>
 		{{/if}}
-	{{/each}}
+	</div>
+	<script>
+			function clicked() {
+				window.location.pathname = "/reading/" + {{userID}} + "/" + {{bookID}};
+
+			}
+		</script>
+		
+	<div class="uwu">
+		<footer>
+			<a href="/home/{{userID}}" style="text-decoration:none;color:black ">UwU</a>
+		</footer>
+	</div>
+	{{else}}
+			{{#if res}}
+			<script>alert("Success! Book added.");</script>
+		{{/if}}
+
+		{{#if updated}}
+			<script>alert("Success! New book chosen.");
+			window.location.pathname = "/home/" + {{userID}};
+			</script>
+		{{/if}}
+
+		<div class="header">
+			<!-- Useful unicode for later  &#8592; -->
+			<!-- Menu Button -->
+			<div id="mySidenav" class="sidenav">
+				<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">   &times;
+				</a>
+				<hr>
+				<!-- Each Book-->
+				<a href="/add/{{userID}}"> Add Book &#10133;  </a>
+				<hr>
+				{{#each books}}
+					<a href="/select/{{ownerID}}/{{name}}" id="{{book_count}}"> {{name}} </a>
+					<hr>
+				{{/each}}
+				<a href="/help/{{userID}}">Help</a>
+				<hr>
+				<a onclick="logout();"> Log Out </a>
+				<hr>
+			</div>
+
+			<button class="menu" onclick="openNav()">
+				&#9776;
+			</button>
+			
+			<!-- App name -->
+			<h1> STUDUwU </h1>
+
+			<!-- Button for spacing -->
+			<button class="menu">
+				<a href="/edit/{{userID}}" style="text-decoration:none;color:black">
+					&#9998
+				</a>
+			</button>
+		</div>
+
+		{{#each books}}
+			{{#if active}}
+				<div class="bookInfo">
+					<p> 
+						<b> {{name}} </b>
+					</p>
+
+					<p> 
+						<u>Pages left in session</u>:
+							<br>{{page_num}} pages
+						
+					</p>
+
+					<p> 
+						<u>Estimated Time Left</u>:
+							<br>{{time_per_page}} minutes
+					</p>
+
+					<p> 
+						<u>Break Time</u>:
+							<br>{{rest_time}} minutes
+					</p>
+
+					<p> 
+						<u>Reminder Method</u>:
+							<br>{{reminder}} 
+					</p>
+				</div>
+			{{/if}}
+		{{/each}}
 
 
 	<div class="start">
@@ -130,8 +221,8 @@
 	<script>
 		function clicked(path) {
 			window.location.pathname = path;
-
 		}
 	</script>
+	{{/if}}
 </body>
 </html>
