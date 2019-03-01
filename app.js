@@ -1,6 +1,5 @@
-
 /**
- * Module dependencies.
+ * Main file for the application.
  */
 
 var express = require('express');
@@ -9,17 +8,18 @@ var path = require('path');
 var handlebars = require('express3-handlebars')
 
 var enforce = require('express-sslify');
-
+var fs = require("fs");
 var fileIO = require('./fileIO');
+
 var login = require('./routes/login');
 var todo = require('./routes/todo');
+var home = require('./routes/home');
 var add = require('./routes/add');
 var edit = require('./routes/edit');
+var reading = require('./routes/reading');
 var help = require('./routes/help');
 var privacy = require('./routes/privacy');
 var terms = require('./routes/terms');
-// Example route
-// var user = require('./routes/user');
 
 var app = express();
 
@@ -28,7 +28,7 @@ app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.engine('handlebars', handlebars());
 app.set('view engine', 'handlebars');
-//app.use(enforce.HTTPS({trustProtoHeader: true}));
+if(app.get('port') !== 3000) { app.use(enforce.HTTPS({trustProtoHeader: true})); }
 app.use(express.favicon("public/images/favicon.ico"));
 app.use(express.logger('dev'));
 app.use(express.json());
@@ -44,79 +44,22 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-app.get('/', login.view);
-app.get('/home/:userID', (req, res) => {
-  let data = require('./db/data.json');
-	let bookdat;
-	let enabled = true;
-	let temp = data[req.params.userID];
-	if(temp === undefined) {
-		bookdat = "nonexist";
-		enabled = false;
-	}else{
-		bookdat = data[req.params.userID][0]['book_count'];
-	}
-	res.render('home', {
-		'userID': req.params.userID,
-		'bookID': bookdat,
-		'books': data[req.params.userID],
-		'res': false,
-		'enabled': enabled,
-		'updated': false 
-	});
-});
-app.get('/toduwu', todo.view);
-app.get('/add/:userID', add.view);
-app.post('/add/:userID/subs', (req, res) => {
+/*
+ * routes 
+ */
+app.get('/', login.render); // login screen
+app.get('/home/:userID', home.render); // home page
+app.get('/toduwu', todo.render); // todo screen
+app.get('/add/:userID', add.render); // add page
+app.post('/add/:userID/send', add.send); // post request for adding a book
+app.get('/edit/:userID', edit.render); // edit page
+app.get('/help/:userID', help.render); // help screen
+app.get('/reading/:userID/:bookID', reading.render); // reading screen
 
-  let counter = require('./db/counts.json');
-  let locCount = ++counter["count"];
-  let userID = req.params.userID;
-  let session = {};
-  let name = req.body.book;
-  let page_num = req.body.pages;
-  let time_per_page = req.body.time;
-  let rest_time = req.body.break;
-  //let num_rest = req.body.numBreaks;
-  let reminder = req.body.reminder;
-
-  session["ownerID"] = userID;
-  session["name"] = name;
-  session["page_num"]= page_num;
-  session["time_per_page"] = time_per_page;
-  session["rest_time"] = rest_time;
-  //session["num_breaks"] = num_rest;
-  session["reminder"] = reminder;
-  session["book_count"] = locCount;
-  session["active"] = 1;
-
-  counter["count"] = locCount;
-
-  fileIO.write_count_to_file(counter);
-  fileIO.write_to_file(userID, session, (dat) => {
-    res.render('home', {
-      'userID': userID,
-      'bookID': dat[userID][dat[userID].length - 1]['book_count'],
-      'books': dat[userID],
-      'res': true,
-      'enabled': true,
-      'updated': false 
-    });
-  });
-});
-app.get('/edit/:userID', edit.view);
-app.get('/help/:userID', help.view);
-app.get('/reading/:userID/:bookID', (req, res) => {
-  let data = require('./db/data.json');
-  res.render('reading', {
-    'userID': req.params.userID,
-    'bookID': req.params.bookID,
-    'books': data[req.params.userID]
-  });
-});
+// selecting a book from the sidebar
 app.get('/select/:userID/:bookName', (req, res) => {
 
-  let data = require('./db/data.json');
+  let data = JSON.parse(fs.readFileSync('./db/data.json', 'utf-8'));
 
   let userID = req.params.userID;
   let bookName = req.params.bookName;
@@ -142,8 +85,8 @@ app.get('/select/:userID/:bookName', (req, res) => {
     });
   });
 });
-app.get('/privacy', privacy.view);
-app.get('/terms',terms.view);
+app.get('/privacy', privacy.render); // privacy policy
+app.get('/terms',terms.render); // terms and conditions
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
