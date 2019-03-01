@@ -5,13 +5,17 @@
 
 var fileIO = require("../public/js/fileIO");
 var counter = require('../db/counts.json');
+var data = require('../db/data.json');
 
 exports.view = function(req, res){
   let id = req.params.userID;
   console.log(id);
+
   res.render('add', {
     'userID': id
   });
+
+  data["viewAlt"] = false;
 }
 
 exports.submitForm = function(req, res) {

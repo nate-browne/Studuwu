@@ -5,6 +5,7 @@ exports.write_to_file = function (id, session, callback) {
   var obj;
   var data = fs.readFileSync('db/data.json', 'utf8');
   obj = JSON.parse(data);
+  
   if(obj.hasOwnProperty(id)) {
     let lst = obj[id];
     for(let ind = 0; ind < lst.length; ind++) {

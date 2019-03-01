@@ -54,6 +54,9 @@ app.get('/reading/:userID/:bookID', reading.view);
 app.get('/select/:userID/:bookName', select.update);
 app.get('/privacy', privacy.view);
 app.get('/terms',terms.view);
+
+//Add alternative routes
+app.get('/homeB/:userID', home.viewAlt);
 // Example route
 // app.get('/users', user.list);
 

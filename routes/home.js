@@ -9,12 +9,13 @@ exports.view = function(req, res){
 	var bookdat;
 	var enabled = true;
 	var index = 0;
+	var viewAlt = false;
   	var data = fs.readFileSync('db/data.json', 'utf8');
   	bookdat = JSON.parse(data);
   	let id = req.params.userID;
   	console.log(bookdat);
 
-	if(JSON.stringify(bookdat) == "{}") {
+	if(JSON.stringify(bookdat) === "{}") {
 		bookdat = "nonexist";
 		enabled = false;
 	}else{
@@ -27,6 +28,35 @@ exports.view = function(req, res){
 		'books': bookdat[id],
 		'res': false,
 		'enabled': enabled,
-		'updated': false 
+		'updated': false,
+		'viewAlt' : false
+	});
+}
+
+exports.viewAlt = function(req, res){
+	var bookdat;
+	var enabled = true;
+	var index = 0;
+	var viewAlt = true;
+  	var data = fs.readFileSync('db/data.json', 'utf8');
+  	bookdat = JSON.parse(data);
+  	let id = req.params.userID;
+  	console.log(bookdat);
+
+	if(JSON.stringify(bookdat) === "{}") {
+		bookdat = "nonexist";
+		enabled = false;
+	}else{
+		index = bookdat[id][0].book_count;
+	}
+
+	res.render('home', {
+		'userID': id,
+		'bookID': index,
+		'books': bookdat[id],
+		'res': false,
+		'enabled': enabled,
+		'updated': false,
+		'viewAlt': true
 	});
 }
