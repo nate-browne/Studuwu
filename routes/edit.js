@@ -1,9 +1,11 @@
-
-/*
- * GET add page
+/**
+ * Javascript module for dealing with the edit page
  */
 
-exports.view = function(req, res){
+/**
+ * Render method for the edit page.
+ */
+exports.render = function(req, res){
   res.render('edit', {
     'userID': req.params.userID
   });
