@@ -37,7 +37,7 @@
 			<script type="text/javascript">
 				var readingTime = {{time_per_page}};
 				var breakTime = {{rest_time}};
-				//var numBreaks = {{num_breaks}};
+				var bps = {{bps}};
 				let reminder_src = "/images/{{reminder}}.mp3";
 			</script>
 		{{/if}}
@@ -65,7 +65,7 @@
 <audio id="sound" src="" type="audio/mp3"></audio>
 <script type="text/javascript">
 	document.getElementById("sound").src = reminder_src;
-	playSound(readingTime, breakTime, 3);
+	playSound(readingTime, breakTime, bps);
 </script>
 
 <button onclick="pause()" class="pause" id="pause">
