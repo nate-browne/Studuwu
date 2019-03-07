@@ -9,7 +9,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<script src="/js/sound.js"></script>
 </head>
-<body>
+<body class="back">
 
 {{#if viewAlt}}
 	<script type="text/javascript">alert(1)</script>
@@ -32,7 +32,7 @@
 
 <!-- Subtitle-->
 <div class="title">
-	<h2> <b><u>Add a Book</u></b> </h2>
+	<h2> <b>Add a Book</b> </h2>
 </div>
 
 <!-- Settings-->
@@ -56,7 +56,7 @@
 		<br>
 
 		<b> Breaks per Session:</b><br>
-		<input type="number" min="1" required="true" placeholder="Breaks">
+		<input type="number" name="bps" min="1" required="true" placeholder="Breaks">
 		<br>
 		<br>
 

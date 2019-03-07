@@ -14,6 +14,7 @@ var fileIO = require('./fileIO');
 var login = require('./routes/login');
 var todo = require('./routes/todo');
 var home = require('./routes/home');
+var homeB = require("./routes/homeB");
 var add = require('./routes/add');
 var edit = require('./routes/edit');
 var reading = require('./routes/reading');
@@ -49,7 +50,7 @@ if ('development' == app.get('env')) {
  */
 app.get('/', login.render); // login screen
 app.get('/home/:userID', home.render); // home page
-app.get('/homeB/:userID', home.renderAlt);
+app.get('/homeB/:userID', homeB.render);
 app.get('/toduwu', todo.render); // todo screen
 app.get('/add/:userID', add.render); // add page
 app.post('/add/:userID/send', add.send); // post request for adding a book

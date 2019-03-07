@@ -4,11 +4,6 @@
 
 var fs = require('fs');
 
-/**
- * Render method. Sends data to the home screen for use
- * @param req request data coming in
- * @param res response data going back out
- */
 exports.render = function(req, res) {
 
   // Grab the file data
@@ -24,12 +19,11 @@ exports.render = function(req, res) {
 		bookdat = "nonexist";
 		enabled = false;
 	}else{
-		let length = data[req.params.userID].length;
-		bookdat = data[req.params.userID][length - 1]['book_count'];
-  }
-  
+		bookdat = data[req.params.userID][0]['book_count'];
+	}
+
   // Send information to the home screen
-	res.render('home', {
+	res.render('homeB', {
 		'userID': req.params.userID,
 		'bookID': bookdat,
 		'books': data[req.params.userID],
