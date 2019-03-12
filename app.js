@@ -8,8 +8,6 @@ var path = require('path');
 var handlebars = require('express3-handlebars')
 
 var enforce = require('express-sslify');
-var fs = require("fs");
-var fileIO = require('./fileIO');
 
 var login = require('./routes/login');
 var todo = require('./routes/todo');
