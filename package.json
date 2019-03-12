@@ -1,10 +1,10 @@
 {
-  "name": "IntroHCI",
+  "name": "Studuwu",
   "version": "0.0.1",
-  "author": "Intro HCI Staff",
+  "author": "Nate Browne, Ivan Perez, Brandon Dang",
   "repository": {
     "type": "git",
-    "url": "https://github.com/IntroHCI/lab4"
+    "url": "https://github.com/nate-browne/Studuwu"
   },
   "license": "MIT",
   "private": true,
