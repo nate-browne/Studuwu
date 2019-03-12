@@ -86,6 +86,7 @@ function pause(){
 	isPaused = true;
 	document.getElementById("play").style.display = "block";
 	document.getElementById("pause").style.display = "none";
+	document.getElementById("da_img").src = "/images/still_img.png";
 }
 
 function play(){
@@ -95,4 +96,5 @@ function play(){
 	isPaused = false;
 	document.getElementById("play").style.display = "none"
 	document.getElementById("pause").style.display = "block";
+	document.getElementById("da_img").src = "/images/tenor.gif";
 }

@@ -198,6 +198,7 @@ img{
 .background{
 	/* The image used */
 	background-image: url("/images/Visions.jpg");
+	background-attachment: fixed;
 
 	height: 100%;
 
