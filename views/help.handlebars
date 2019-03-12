@@ -12,7 +12,7 @@
 	<script src="/js/bootstrap.js"></script>
 	<script src="/js/video.js"></script>
 </head>
-<body>
+<body class="background">
 
 <!-- Header of the page-->
 <div class="header">
@@ -66,7 +66,7 @@
 		</div>
 		<div class="hiddenInfo" id="hidden2" style="display: none;">
 			<p>
-				- You are able to see you remaining time for your session on the homescreen. However, once you start reading, you would not be able to see the actual time remaining. Instead, you would get auditory cues that would let you know how much time you have left or if you have a break coming up. The reason for this is because we want to minimize all possible distractions, which includes removing the timer. 
+				- You would only receive auditory cues, but would not be able to see actual time. This is beacause we want to reduce the amount of distractions. 
 			</p>
 		</div>
 	</h4>
@@ -79,21 +79,21 @@
 		</div>
 		<div class="hiddenInfo" id="hidden3" style="display: none;">
 			<p>
-				- Besides having regular auditory cues, the go to way to know that your session has started is if the circle is spinning.
+				- Besides having regular auditory cues, the go to way to know that your session has started by looking at the animation moving. 
 			</p>
-			<div class="loader"></div>
+			<img src="/images/tenor.gif">
 		</div>
 	</h4>
 
 	<h4>
 		<div class="info">
 			<a onclick="show(4)">
-			4) [Insert Question]
+			4) Is there a way to pause my session?
 			</a>
 		</div>
 		<div class="hiddenInfo" id="hidden4" style="display: none;">
 			<p>
-				- [Insert Answer]
+				- There actually is. It's located at the bottom of the page once the user starts reading. In this region, there is not only a pause button, but a resume button as well. 
 			</p>
 		</div>
 	</h4>
@@ -101,10 +101,23 @@
 	<h4>
 		<div class="info">
 			<a onclick="show(5)">
-			5) Why Studuwu?
+			5) Why is there an UwU at the bottom of each page?
 			</a>
 		</div>
 		<div class="hiddenInfo" id="hidden5" style="display: none;">
+			<p>
+				- Good question, the UwU at the bottom actually functions as universal home button.
+			</p>
+		</div>
+	</h4>
+
+	<h4>
+		<div class="info">
+			<a onclick="show(6)">
+			6) Why Studuwu?
+			</a>
+		</div>
+		<div class="hiddenInfo" id="hidden6" style="display: none;">
 			<p>
 				The real question is ... Why not? UwU
 			</p>
@@ -115,7 +128,7 @@
 
 <div class="uwu">
 	<footer>
-		UwU
+		<a href="/home/{{userID}}" style="text-decoration:none;color:black ">UwU</a>
 	</footer>
 </div>
 </body>

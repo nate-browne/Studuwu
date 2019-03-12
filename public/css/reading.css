@@ -13,8 +13,29 @@
 	margin-bottom: 15%;
 }
 
+#title{
+	font-family: Baloo Thambi;
+	font-size: 100px;
+	text-align: center;
+	margin-top: 15%;
+	margin-bottom: 15%;
+}
+
+#status{
+	font-family: Baloo Thambi;
+	font-size: 50px;
+	text-align: center;
+}
+
+#time{
+	font-family: Baloo Thambi;
+	font-size: 50px;
+	text-align: center;
+}
+
+
 .header {
-	background: #f2f2f2;
+	background: black;
 	overflow: hidden;
 	font-family: Baloo Thambi;
 	display: flex;
@@ -27,7 +48,7 @@
     margin-left: 20px;
     margin-right: 20px;
 	float: left;
-	color: black;
+	color: #f2f2f2;
 	text-align: center;
 	padding: 14px 16px;
 	text-decoration: none;
@@ -39,7 +60,7 @@
 
 .header h1{
 	float: left;
-	color: black;
+	color: #f2f2f2;
 	text-align: center;
 	padding: 14px 16px;
 	text-decoration: none;
@@ -48,13 +69,49 @@
 }
 
 .back{
-	background: #f2f2f2;
+	background: black;
 	border: none;
 }
 
 .help {
-	background: #f2f2f2;
+	background:black;
 	border: none;
+}
+
+.pause{
+	margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+	color: black;
+	text-align: center;
+	padding: 14px 16px;
+	font-size: 70px;
+	border-color: black;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	border-radius: 25px;
+	background: #8DA5DD;
+	border: none; 
+}
+
+.play{
+	margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+	color: black;
+	text-align: center;
+	padding: 14px 16px;
+	font-size: 70px;
+	border-color: black;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	border-radius: 25px;
+	background: #8DA5DD;
+	border: none; 
 }
 
 .uwu{
@@ -72,6 +129,7 @@ body{
 .calm {
 	/* The image used */
 	background-image: url("/images/calm.jpg");
+	background-attachment: fixed;
 
 	/* Full height */
 	height: 100%; 
@@ -83,18 +141,34 @@ body{
 
 }
 
-.loader {
+img{
+	margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 25%;
 	border: 16px solid #f3f3f3;
-	border-radius: 50%;
+	border-top: 16px  solid #2ff3c69e;
+	border-right: 16px solid blue;
+	border-bottom: 16px solid purple;
+	border-left: 16px solid pink;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.loader {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 25%;
+	background: white;
+	border: 16px solid #f3f3f3;
 	border-top: 16px solid white;
 	border-right: 16px solid blue;
 	border-bottom: 16px solid purple;
 	border-left: 16px solid pink;
 	width: 120px;
-	height: 120px;
+	height: 200px;
 	-webkit-animation: spin 10s linear infinite;
 	animation: spin 10s linear infinite;
 }

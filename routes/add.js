@@ -1,29 +1,42 @@
-
-/*.
- * GET add page
+/**
+ * Javascript module for dealing with the add page/submitting a form
  */
 
-var fileIO = require("../public/js/fileIO");
-var counter = require('../db/counts.json');
+var fs = require('fs');
+var fileIO = require('../fileIO');
 
-exports.view = function(req, res){
+/**
+ * Render method. Send info to the add page
+ * @param req request info coming in
+ * @param res response data going back out
+ */
+exports.render = function(req, res){
   let id = req.params.userID;
-  console.log(id);
   res.render('add', {
     'userID': id
   });
 }
 
-exports.submitForm = function(req, res) {
+/**
+ * Send method. Handles communication with the database layer
+ * @param req request info coming in
+ * @param res response data going back out
+ */
+exports.send = function(req, res) {
 
+  // Read in the count file and update it
+  let counter = JSON.parse(fs.readFileSync('./db/counts.json', 'utf8'));
   let locCount = ++counter["count"];
+
+  // Construct the session data from the form
   let userID = req.params.userID;
   let session = {};
-  let name = req.query.book;
-  let page_num = req.query.pages;
-  let time_per_page = req.query.time;
-  let rest_time = req.query.break;
-  let reminder = req.query.reminder;
+  let name = req.body.book;
+  let page_num = req.body.pages;
+  let time_per_page = req.body.time;
+  let rest_time = req.body.break;
+  let reminder = req.body.reminder;
+  let bps = req.body.bps;
 
   session["ownerID"] = userID;
   session["name"] = name;
@@ -33,18 +46,13 @@ exports.submitForm = function(req, res) {
   session["reminder"] = reminder;
   session["book_count"] = locCount;
   session["active"] = 1;
+  session["bps"] = bps;
 
   counter["count"] = locCount;
 
+  // Write new information to the file
   fileIO.write_count_to_file(counter);
   fileIO.write_to_file(userID, session, (dat) => {
-    res.render('home', {
-      'userID': userID,
-      'bookID': dat[userID][dat[userID].length - 1]['book_count'],
-      'books': dat[userID],
-      'res': true,
-      'enabled': true,
-      'updated': false 
-    });
+    res.redirect("/home/" + userID);
   });
 }

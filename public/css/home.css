@@ -1,4 +1,3 @@
-
 .title{
 	font-size: 60px;
 	text-align: center;
@@ -6,7 +5,7 @@
 }
 
 .header {
-	background: #f2f2f2;
+	background: black;
 	overflow: hidden;
 	font-family: 'Roboto', sans-serif;
 	display: flex;
@@ -19,7 +18,7 @@
     margin-left: 20px;
     margin-right: 20px;
 	float: left;
-	color: black;
+	color: #f2f2f2;;
 	text-align: center;
 	padding: 14px 16px;
 	text-decoration: none;
@@ -27,12 +26,13 @@
 	width: 115px;
 	border-radius: 50%;
 	display: inline-block;
+	outline: none;
 }
 
 .header h1{
 	font-family: Baloo Thambi;
 	float: left;
-	color: black;
+	color: #f2f2f2;
 	text-align: center;
 	padding: 14px 16px;
 	text-decoration: none;
@@ -41,7 +41,7 @@
 }
 
 .header hr{
-	border-color: black;
+	border-color: #f2f2f2;
 	margin: 0;
 	border-width: 3px;
 }
@@ -49,7 +49,8 @@
 .bookInfo {
 	font-family: 'Roboto', sans-serif;
 	text-align: center;
-	margin-top: 35%;
+	margin-top: 20%;
+	color: #f2f2f2;
 }
 
 .bookInfo p {
@@ -63,7 +64,7 @@
 .start button{
 	margin-block-start: 0.67em;
     margin-block-end: 0.67em;
-	color: black;
+	color: #fbf9f9;
 	text-align: center;
 	padding: 14px 16px;
 	font-size: 70px;
@@ -74,17 +75,44 @@
 	flex-direction: column;
 	justify-content: center;
 	border-radius: 25px;
-	background: #8DA5DD;
+	background: #0c847bd6;
 	border: none; 
 }
 
+.start a{
+	margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 14px 16px;
+	font-size: 70px;
+	font-family: 'Roboto', sans-serif;
+	border-color: black;
+	margin-left: 25%;
+	margin-right: 25%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-decoration: none;
+	background: black;
+	border-radius: 25px;
+}
+
+.start h1{
+	font-family: 'Roboto', sans-serif;
+	text-align: center;
+	margin-top: 35%;
+	font-size: 70px;
+	color: #f2f2f2;
+}
+
 .menu{
-	background: #f2f2f2;
+	background: black;
 	border: none;
 }
 
 .help{
-	background: #f2f2f2;
+	background: black;
 	border: none;
 	font-size: 20px;
 }
@@ -94,6 +122,7 @@
 	font-size: 60px;
 	font-family: Baloo Thambi;
 	padding-top: 15px;
+	color: #f2f2f2;
 }
 
 body {
@@ -143,7 +172,7 @@ body {
   z-index: 1; /* Stay on top */
   top: 0;
   left: 0;
-  background-color: #f2f2f2;
+  background-color: #00000059;
   overflow-x: hidden; /* Disable horizontal scroll */
   transition: 0.3s; /* 0.5 second transition effect to slide in the sidenav */
 }
@@ -158,11 +187,10 @@ body {
 	text-decoration: none;
 	text-align: left;
 	font-size: 50px;
-	color: black;
+	color: #f2f2f2;
 	display: inline-grid;
 	transition: 0.3s;
-	background: #E2E9FA;
-	border-width: 5px;
+	background: black;
 }
 
 /* Position and style the close button (top right corner) */
@@ -171,5 +199,70 @@ body {
 	margin-left: 80%;
 	font-size: 50px;
 	border: transparent;
-	background: #f2f2f2;
+	background: black;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto;
+  background-color: #2196F3;
+  padding: 10px;
+  background: none;
+}
+
+.grid-item {
+	background-color: #00000059;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 80px;
+  text-align: left;
+  font-family: 'Roboto', sans-serif;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 10%;
+}
+
+.grid-item button{
+	background-color: #0ebeb3d6;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 80px;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  margin-right: auto;
+  margin-left: auto;
+  background: #0ebeb3d6;
+}
+
+.grid-item p{
+	background-color: #00000059;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 40px;
+  text-align: center;
+	font-family: 'Roboto', sans-serif;
+	color: white;
+  margin-right: auto;
+  margin-left: auto;
+  border: none;
+}
+
+body{
+	margin: 0;
+	padding: 0;
+}
+
+.back {
+	/* The image used */
+	background-image: url("/images/Alive.jpg");
+	background-attachment: fixed;
+
+	/* Full height */
+	height: 100%; 
+
+	/* Center and scale the image nicely */
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+
 }

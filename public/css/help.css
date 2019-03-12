@@ -1,11 +1,12 @@
 body {
-    background: #E2E9FA;
+	background: #00a5d4;
     margin: 0;
     padding: 0;
 }
 .title{
 	text-align: center;
 	font-family: Helvetica Neue;
+	color: #f2f2f2;
 }
 
 .title h2{
@@ -14,6 +15,7 @@ body {
 	text-align: center;
 	margin-bottom: 0;
 	margin-top: 0;
+	color: #f2f2f2;
 }
 
 .title p {
@@ -21,14 +23,16 @@ body {
 	font-family: Baloo Thambi;
 	font-size: 30px;
 	text-align: center;
+	color: #f2f2f2;
 }
 
 .header {
-	background: #f2f2f2;
+	background: black;
 	overflow: hidden;
 	font-family: Baloo Thambi;
 	display: flex;
 	justify-content: space-between;
+	color: #f2f2f2;
 }
 
 .header button{
@@ -37,7 +41,6 @@ body {
     margin-left: 20px;
     margin-right: 20px;
 	float: left;
-	color: black;
 	text-align: center;
 	padding: 14px 16px;
 	text-decoration: none;
@@ -45,11 +48,13 @@ body {
 	width: 115px;
 	border-radius: 50%;
 	display: inline-block;
+	background: black;
+	color: #f2f2f2;
 }
 
 .header h1{
 	float: left;
-	color: black;
+	color: #f2f2f2;
 	text-align: center;
 	padding: 14px 16px;
 	text-decoration: none;
@@ -83,10 +88,12 @@ body{
 	margin-left: 2%;
 	font-family: Baloo Thambi;
 	font-size: 50px;
+	color: #f2f2f2;
 }
 
 .info p{
 	font-family: Baloo Thambi;
+	color: #f2f2f2;
 }
 
 .hiddenInfo p{
@@ -96,10 +103,11 @@ body{
 	display: hidden;
 	margin-top: 0;
 	margin-bottom: 0;
+	color: #f2f2f2;
 }
 
 video{
-	margin-left: 82%;
+	margin-left: 100%;
 	object-fit: fill;
 	width: 100%;
 	height: auto;
@@ -148,10 +156,9 @@ video{
 }
 
 .hiddenInfo button{
-	color: black;
 	text-align: center;
 	text-decoration: none;
-	font-size: 30px;
+	font-size: 40px;
 	width: 200px;
 	display: inline-block;
 	background: #f2f2f2;
@@ -159,23 +166,23 @@ video{
 	margin-left: 41%;
 	margin-right: 35%;
 	font-family: Baloo Thambi;
+	color: #f2f2f2;
+	background: black;
 }
 
-.loader {
+img{
+	margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 0%;
-	margin-bottom: 0;
 	border: 16px solid #f3f3f3;
-	border-radius: 50%;
-	border-top: 16px solid white;
+	border-top: 16px  solid #2ff3c69e;
 	border-right: 16px solid blue;
 	border-bottom: 16px solid purple;
 	border-left: 16px solid pink;
-	width: 100px;
-	height: 100px;
-	-webkit-animation: spin 10s linear infinite;
-	animation: spin 10s linear infinite;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 @-webkit-keyframes spin {
@@ -186,4 +193,18 @@ video{
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+.background{
+	/* The image used */
+	background-image: url("/images/Visions.jpg");
+	background-attachment: fixed;
+
+	height: 100%;
+
+	/* Center and scale the image nicely */
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+
 }

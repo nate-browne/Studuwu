@@ -1,24 +1,15 @@
 
 var fs = require('fs');
-const identity = (x) => x;
 
-exports.write_count_to_file = function(data) {
-  fs.writeFileSync("db/counts.json", JSON.stringify(data));
-}
-
-exports.write_to_file = function(id, session, callback = identity) {
+exports.write_to_file = function (id, session, callback) {
   var obj;
   var data = fs.readFileSync('db/data.json', 'utf8');
   obj = JSON.parse(data);
   if(obj.hasOwnProperty(id)) {
     let lst = obj[id];
-    let ind = 0, saved = 0;
-    for(ind = 0; ind < lst.length; ind++) {
-      if(lst[ind]['name'] === session.name) {
+    for(let ind = 0; ind < lst.length; ind++) {
+      if(lst[ind] === session.name) {
         lst.splice(ind, 1);
-      }
-      if(lst[ind] !== undefined) {
-        lst[ind]['active'] = 0;
       }
     }
     lst.push(session);
