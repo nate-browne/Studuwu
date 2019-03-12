@@ -1,20 +1,5 @@
 <html>
 <head>
-	<!-- Google Analytics Content Experiment code -->
-	<script>function utmx_section(){}function utmx(){}(function(){var
-	k='191098790-0',d=document,l=d.location,c=d.cookie;
-	if(l.search.indexOf('utm_expid='+k)>0)return;
-	function f(n){if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.
-	indexOf(';',i);return escape(c.substring(i+n.length+1,j<0?c.
-	length:j))}}}var x=f('__utmx'),xx=f('__utmxx'),h=l.hash;d.write(
-	'<sc'+'ript src="'+'http'+(l.protocol=='https:'?'s://ssl':
-	'://www')+'.google-analytics.com/ga_exp.js?'+'utmxkey='+k+
-	'&utmx='+(x?x:'')+'&utmxx='+(xx?xx:'')+'&utmxtime='+new Date().
-	valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
-	'" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
-	</script><script>utmx('url','A/B');</script>
-	<!-- End of Google Analytics Content Experiment code -->
-
 	<title>Studuwu</title>
 	<meta charset="UTF-8">
 	<!--
@@ -51,109 +36,83 @@
 </head>
 
 <body class="back">
-			{{#if res}}
-			<script>alert("Success! Book added.");</script>
-			{{/if}}
+		{{#if res}}
+		<script>alert("Success! Book added.");</script>
+		{{/if}}
 
-			{{#if updated}}
-				<script>alert("Success! New book chosen.");
-				window.location.pathname = "/home/" + {{userID}};
-				</script>
-			{{/if}}
-
-			<div class="header">
-				<!-- Useful unicode for later  &#8592; -->
-				<!-- Menu Button -->
-				<div id="mySidenav" class="sidenav">
-					<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">   &times;
-					</a>
-					<hr>
-					<!-- Each Book-->
-					<a href="/add/{{userID}}"> Add Book &#10133;  </a>
-					<hr>
-					{{#each books}}
-						<a href="/select/{{ownerID}}/{{name}}" id="{{book_count}}"> {{name}} </a>
-						<hr>
-					{{/each}}
-					<a href="/help/{{userID}}">Help</a>
-					<hr>
-					<a onclick="logout();"> Log Out </a>
-					<hr>
-				</div>
-
-				<button class="menu" onclick="openNav()">
-					&#9776;
-				</button>
-				
-				<!-- App name -->
-				<h1> STUDUwU </h1>
-
-				<!-- Button for spacing -->
-				<button class="menu">
-					<a href="/edit/{{userID}}" style="text-decoration:none;color:#f2f2f2">
-						&#9998;
-					</a>
-				</button>
+		<div class="header">
+			<!-- Useful unicode for later  &#8592; -->
+			<!-- Menu Button -->
+			<div id="mySidenav" class="sidenav">
+				<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">   &times;
+				</a>
+				<hr>
+				<!-- Each Book-->
+				<a href="/add/{{userID}}"> Add Book &#10133;  </a>
+				<hr>
+				<a href="/help/{{userID}}">Help</a>
+				<hr>
+				<a onclick="logout();"> Log Out </a>
+				<hr>
 			</div>
 
+			<button class="menu" onclick="openNav()">
+				&#9776;
+			</button>
+			
+			<!-- App name -->
+			<h1> STUDUwU </h1>
+
+			<!-- Button for spacing -->
+			<button class="menu" disabled></button>
+		</div>
+
+		<div class="grid-container">
 			{{#each books}}
-				{{#if active}}
-					<div class="bookInfo">
-						<p> 
-							<b> {{name}} </b>
-						</p>
+				<div class="grid-item">
+				<button onclick="clicked();"> 
+						{{name}} 
+				</button>
+				<br>
+					<p>
+					Pages left in session: {{page_num}} pages
+					<br>
+					<br>
+					Estimated Time Left: {{time_per_page}} minutes
+					<br>
+					<br>
+					Break Time: {{rest_time}} minutes
+					<br><br>
+					Reminder Method: {{reminder}} 
+					</p>
+				</div>
 
-						<p> 
-							<u>Pages left in session</u>:
-								<br>{{page_num}} pages
-							
-						</p>
-
-						<p> 
-							<u>Estimated Time Left</u>:
-								<br>{{time_per_page}} minutes
-						</p>
-
-						<p> 
-							<u>Break Time</u>:
-								<br>{{rest_time}} minutes
-						</p>
-
-						<p> 
-							<u>Reminder Method</u>:
-								<br>{{reminder}} 
-						</p>
-					</div>
-				{{/if}}
 			{{/each}}
-
+		</div>
 
 		<div class="start">
 			{{#if enabled}}
-				<button onclick="clicked('/reading/{{userID}}/{{bookID}}');"> 
-					Start Reading! 
-				</button>
 			{{else}}
 				<h1> 
 					Hello New User! <br>
 					<br>
 					Welcome to Studuwu, an app that would help you read and go UwU!<br>
 					<br>
-					To get started, click on the &#9776;<br>
+					To get started, click on the "Add Book" button below!<br>
 				</h1>
+				<a href="/add/{{userID}}"> Add Book &#10133;  </a>
 			{{/if}}
 		</div>
+		<script>
+				function clicked() {
+					window.location.pathname = "/reading/" + {{userID}} + "/" + {{bookID}};
+
+				}
+			</script>
 			
 		<div class="uwu">
 			<footer>
-				<a href="/home/{{userID}}" style="text-decoration:none;color:#f2f2f2">UwU</a>
+				<a href="/home/{{userID}}" style="text-decoration:none;color:#f2f2f2 ">UwU</a>
 			</footer>
 		</div>
-
-		<script>
-			function clicked(path) {
-				window.location.pathname = path;
-			}
-		</script>
-</body>
 </html>

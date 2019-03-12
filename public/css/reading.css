@@ -35,7 +35,7 @@
 
 
 .header {
-	background: #f2f2f2;
+	background: black;
 	overflow: hidden;
 	font-family: Baloo Thambi;
 	display: flex;
@@ -48,7 +48,7 @@
     margin-left: 20px;
     margin-right: 20px;
 	float: left;
-	color: black;
+	color: #f2f2f2;
 	text-align: center;
 	padding: 14px 16px;
 	text-decoration: none;
@@ -60,7 +60,7 @@
 
 .header h1{
 	float: left;
-	color: black;
+	color: #f2f2f2;
 	text-align: center;
 	padding: 14px 16px;
 	text-decoration: none;
@@ -69,12 +69,12 @@
 }
 
 .back{
-	background: #f2f2f2;
+	background: black;
 	border: none;
 }
 
 .help {
-	background: #f2f2f2;
+	background:black;
 	border: none;
 }
 
@@ -129,6 +129,7 @@ body{
 .calm {
 	/* The image used */
 	background-image: url("/images/calm.jpg");
+	background-attachment: fixed;
 
 	/* Full height */
 	height: 100%; 
